@@ -141,7 +141,15 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>.mr/macro/dbadge</li>
+
+<li>.mr/stylesheet/dbadge</li>
+
 <li>$:/.mr/kookma/stylesheet/tw-version</li>
+
+<li>$:/.mr/stylesheet/utility</li>
+
+<li>$:/config/AutoSave</li>
 
 <li>$:/config/codemirror/autoCloseTags</li>
 
@@ -165,25 +173,19 @@ Error message and password prompt
 
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/delete</li>
 
-<li>$:/core</li>
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info</li>
 
-<li>$:/core/ui/EditorToolbar/timestamp</li>
+<li>$:/core</li>
 
 <li>$:/def/macro-template</li>
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/favicon.ico</li>
+
 <li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
-
-<li>$:/kookma/CodeMirror/Firefox-Setting</li>
-
-<li>$:/kookma/highlight.js/theme/TWDark</li>
-
-<li>$:/kookma/macro/dbadge</li>
-
-<li>$:/kookma/stylesheet/dbadge</li>
 
 <li>$:/plugins/.mr/shiraz/images/view-fields.svg</li>
 
@@ -199,9 +201,13 @@ Error message and password prompt
 
 <li>$:/plugins/.mr/shiraz/stylesheet/bs/alerts</li>
 
+<li>$:/plugins/.mr/shiraz/stylesheet/tw-adjustment</li>
+
 <li>$:/plugins/.mr/shiraz/stylesheet/view-fields</li>
 
 <li>$:/plugins/.mr/shiraz/stylesheet/wikitext-macro</li>
+
+<li>$:/plugins/.mr/shiraz/template/task-management-draggable</li>
 
 <li>$:/plugins/.mr/shiraz/viewtemplate/view-fields</li>
 
@@ -225,29 +231,31 @@ Error message and password prompt
 
 <li>$:/plugins/tiddlywiki/highlight/highlight.js</li>
 
-<li>$:/plugins/tongerner/timestamp-button</li>
-
 <li>$:/plugins/wikilabs/link-to-tabs</li>
 
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/plugin-info--896887961-$:/plugins/tongerner/timestamp-button</li>
-
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
 
-<li>$:/state/tab--1094306612</li>
+<li>$:/state/slider-macro/macro/linkto/Code-310788987</li>
+
+<li>$:/state/slider-macro/macro/slider-macro/Code--49026255</li>
+
+<li>$:/state/slider-macro/macro/slider-macro/My Label--49026255</li>
+
+<li>$:/state/slider-macro/macro/vspace/Code--454726639</li>
 
 <li>$:/state/tab--1498284803</li>
 
 <li>$:/state/tab--1963855381</li>
 
-<li>$:/state/tab--2028231098</li>
-
 <li>$:/state/tab--697582678</li>
+
+<li>$:/state/tab-1295690639</li>
 
 <li>$:/state/tab-1749438307</li>
 
@@ -271,19 +279,27 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
+<li>23rd March 2019</li>
+
 <li>Authors and Contributors</li>
+
+<li>Change Log</li>
+
+<li>CodeMirror/Firefox-Setting</li>
 
 <li>Coding Practice</li>
 
 <li>Home</li>
-
-<li>Idea on Wrtting Macro</li>
 
 <li>List of Macros</li>
 
 <li>Macro Summary</li>
 
 <li>macro/.lorem</li>
+
+<li>macro/article</li>
+
+<li>macro/colorcode</li>
 
 <li>macro/find</li>
 
@@ -293,9 +309,13 @@ Error message and password prompt
 
 <li>macro/linkto</li>
 
+<li>macro/list-authors</li>
+
 <li>macro/olist</li>
 
 <li>macro/show-macro</li>
+
+<li>macro/slider-macro</li>
 
 <li>macro/vspace</li>
 
@@ -305,7 +325,11 @@ Error message and password prompt
 
 <li>snippet/wikitext-macro</li>
 
-<li>start</li>
+<li>ToDos</li>
+
+<li>TWDark</li>
+
+<li>Yazd</li>
 
 <li>Yazd Mechanism</li>
 
@@ -321,6 +345,50 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20181203212737578" creator="Mohammad" modified="20181204193801168" modifier="Mohammad" tags="$:/tags/Macro badge tools" title=".mr/macro/dbadge">
+<pre>\define dbadge(subject,status, type:&quot;primary&quot;)
+&lt;div class=&quot;dbadge&quot;&gt;&lt;span class=&quot;dbadge-subject&quot;&gt;$subject$&lt;/span&gt;&lt;span class=&quot;dbadge-status dbadge-$type$ &quot;&gt;$status$&lt;/span&gt;&lt;/div&gt;
+\end
+</pre>
+</div>
+<div created="20181204192835967" creator="Mohammad" modified="20181204193708463" modifier="Mohammad" tags="badge $:/tags/Stylesheet" title=".mr/stylesheet/dbadge" type="text/css">
+<pre>/*Credits: 
+Nishant Srivastava https://codepen.io/nisrulz/pen/bpQWLW
+Mohammad Rahmani: https://github.com/kookma
+*/
+.dbadge {
+ display: inline-block;
+ margin: 0.0em;
+}
+.dbadge &gt; span {
+  color: #ffffff;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1;
+  padding: .2em .6em;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;}
+
+.dbadge-subject{
+  background-color: #656565;
+  border-bottom-left-radius: 0.25em;
+  border-top-left-radius: 0.25em;}
+.dbadge-status {
+  border-bottom-right-radius: 0.25em;
+  border-top-right-radius: 0.25em;}
+
+.dbadge-primary {
+    background-color: #337ab7;}
+.dbadge-success {
+    background-color: #5cb85c;}
+.dbadge-info {
+    background-color: #5bc0de;}
+.dbadge-warning {
+    background-color: #f0ad4e;}
+.dbadge-danger {
+    background-color: #d9534f;}</pre>
+</div>
 <div created="20180906042308596" creator="Mohammad" modified="20181021064233482" modifier="Mohammad" tags="kookma $:/tags/Stylesheet" title="$:/.mr/kookma/stylesheet/tw-version" type="application/x-tiddler">
 <pre>&lt;pre&gt;/* TW-version added to site title */
 .tc-site-title:before {
@@ -331,6 +399,17 @@ Error message and password prompt
   font-size:13px;
 }
 &lt;/pre&gt;</pre>
+</div>
+<div created="20190212150353369" creator="Mohammad" modified="20190320055108928" modifier="Mohammad" tags="$:/tags/Stylesheet" title="$:/.mr/stylesheet/utility" type="text/css">
+<pre>[data-tags*=&quot;info&quot;] .tc-title {
+  font-weight:600;
+  color:red;
+}
+
+.float-right{float:right;}</pre>
+</div>
+<div created="20190322165410211" creator="Mohammad" modified="20190322165410211" modifier="Mohammad" title="$:/config/AutoSave">
+<pre>no</pre>
 </div>
 <div created="20190316152427822" creator="Mohammad" modified="20190316152427822" modifier="Mohammad" title="$:/config/codemirror/autoCloseTags" type="bool">
 <pre>true</pre>
@@ -356,13 +435,16 @@ Error message and password prompt
 <div created="20190316152439714" creator="Mohammad" modified="20190316152439714" modifier="Mohammad" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/refresh">
 <pre>show</pre>
 </div>
-<div created="20190316204412890" creator="Mohammad" modified="20190316204412890" modifier="Mohammad" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/clone">
+<div created="20190322165126482" creator="Mohammad" modified="20190322165126482" modifier="Mohammad" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/clone">
 <pre>show</pre>
 </div>
-<div created="20190316204407728" creator="Mohammad" modified="20190316204407728" modifier="Mohammad" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/close-others">
+<div created="20190322165128912" creator="Mohammad" modified="20190322165128912" modifier="Mohammad" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/close-others">
 <pre>show</pre>
 </div>
-<div created="20190321161024931" creator="Mohammad" modified="20190321161024931" modifier="Mohammad" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/delete">
+<div created="20190322165130921" creator="Mohammad" modified="20190322165130921" modifier="Mohammad" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/delete">
+<pre>show</pre>
+</div>
+<div created="20190322165124464" creator="Mohammad" modified="20190322165124465" modifier="Mohammad" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info">
 <pre>show</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.20-prerelease">
@@ -9325,22 +9407,10 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div caption="{{$:/language/Buttons/TimeStamp/Caption}}" condition="[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]" created="20161118171456554" creator="TonGerner" description="{{$:/language/Buttons/TimeStamp/Hint}}" icon="$:/core/images/timestamp" modified="20190316211630100" modifier="Mohammad" shortcuts="((timestamp))" tags="$:/tags/EditorToolbar" title="$:/core/ui/EditorToolbar/timestamp">
-<pre>&lt;$action-sendmessage
-	$message=&quot;tm-edit-text-operation&quot;
-	$param=&quot;replace-selection&quot;
-	text=&lt;&lt;now &quot;DDth mmm YYYY 0hh:0mm:0ss&quot;&gt;&gt;
-/&gt;</pre>
-</div>
-<div author="Mohammad" created="20190316204425603" creator="Mohammad" description="add desc..." modified="20190317181800678" modifier="Mohammad" tags="yazd $:/tags/Macro" title="$:/def/macro-template">
+<div author="Mohammad" created="20190316204425603" creator="Mohammad" description="add desc..." modified="20190322212723071" modifier="Mohammad" syntax="macro calling syntax..." tags="yazd $:/tags/Macro" title="$:/def/macro-template">
 <pre>\define macname(p1:&quot;&quot;, p2:&quot;&quot;)
 .
 \end
-
-!! Macro
-&lt;&lt;&lt;
-&lt;&lt;show-macro&gt;&gt;
-&lt;&lt;&lt;
 
 !! Purpose
 &lt;&lt;&lt;
@@ -9353,192 +9423,58 @@ short desc
 &lt;&lt;mac-name params&gt;&gt;
 ```
 
-!! Content and attributes
-|!Attributes |!Type |!Description |
+!! Content and parameters
+|Parameter |Type |Description |h
 |par1 |required|desc |
 |par2 |optional|desc|
-
 &lt;&lt;&lt;
 
-!! Example
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
 &lt;&lt;&lt;
-description
-&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
-src=&quot;&quot;&quot;&lt;&lt;mac-name 
-  &gt;&gt;
-&quot;&quot;&quot;/&gt;
-
+&lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;
 
 !! Revisions
 &lt;&lt;&lt;
 ;Rev xx
 :date and desc
-&lt;&lt;&lt;</pre>
-</div>
-<div created="20190316192150648" creator="Mohammad" modified="20190316194851966" modifier="Mohammad" title="$:/DefaultTiddlers">
-<pre>[tag[start]]
+&lt;&lt;&lt;
+
+!! Reference
+&lt;&lt;&lt;
+# [ext[Yazd|https://tw-scripts.github.io/Yazd/]]
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+!! Examples
+&lt;&lt;&lt;
+description
+&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
+src=&quot;&quot;&quot;&lt;&lt;mac-name 
+  &gt;&gt;
+&quot;&quot;&quot;/&gt;
+&lt;&lt;&lt;
 </pre>
+</div>
+<div created="20190322165316433" creator="Mohammad" modified="20190322222219952" modifier="Mohammad" title="$:/DefaultTiddlers">
+<pre>Home
+[[Change Log]]
+[[Coding Practice]]
+[[Authors and Contributors]]
+[[Macro Summary]]
+
+</pre>
+</div>
+<div created="20190322204550494" creator="Mohammad" modified="20190322204600820" modifier="Mohammad" title="$:/favicon.ico" type="image/png">
+<pre>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</pre>
 </div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[mr/olist]]</pre>
+# [[macro/Utility]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
-</div>
-<div created="20181223191617706" creator="Mohammad" modified="20190316194728257" modifier="Mohammad" tags="$:/tags/Stylesheet" title="$:/kookma/CodeMirror/Firefox-Setting" type="text/css">
-<pre>/*Adjust the font of Codemirror on FF browser*/
-.CodeMirror {
-font-family: Consolas, monospace;
-font-size: 15px;
-}</pre>
-</div>
-<div created="20180419120729037" creator="Mohammad" modified="20190316194712568" modifier="Mohammad" tags="$:/tags/Stylesheet theme" title="$:/kookma/highlight.js/theme/TWDark" type="text/css">
-<pre>/* The customised dark style for TiddlyFor syntax highlighthing
-(highlight.js style)
-Apr 19, 2018
-Mohammad Rahmani
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #2e2e2e;
-  color: #ffffff;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #C0DD0C;
-  font-style:normal;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-type,
-.hljs-addition {
-  color: #FF8000;
-  font-weight:normal;
-}
-
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #f99157;
-}
-
-.hljs-number{
- color: #7FB347;
-}
-
-
-.hljs-string,
-.hljs-doctag,
-.hljs-regexp {
-  color:#FFC600; /* #8abeb7;*/
-}
-
-.hljs-title,
-.hljs-name,
-.hljs-section {
-  color: #b5bd68;
-}
-
-.hljs-built_in {
-  color: #66D9EF;
-  font-weight:normal;
-}
-
-
-.hljs-variable,
-.hljs-template-variable,
-.hljs-selector-id,
-.hljs-class .hljs-title {
-   color: #ffcc66;
-}
-
-.hljs-section,
-.hljs-name,
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-subst,
-.hljs-meta,
-.hljs-link {
-  color: #f99157;
-}
-
-.hljs-deletion {
-  color: #dc322f;
-}
-
-.hljs-formula {
-  background: #eee8d5;
-}
-
-.hljs-attr,
-.hljs-attribute {
-  color: #81a2be;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-/*correctio of tex tags*/
-.hljs-tag,
-.hljs-section {
-  color: #ff0000;
-}</pre>
-</div>
-<div created="20181203212737578" creator="Mohammad" modified="20190316194748904" modifier="Mohammad" tags="$:/tags/Macro badge tools" title="$:/kookma/macro/dbadge">
-<pre>\define dbadge(subject,status, type:&quot;primary&quot;)
-&lt;div class=&quot;dbadge&quot;&gt;&lt;span class=&quot;dbadge-subject&quot;&gt;$subject$&lt;/span&gt;&lt;span class=&quot;dbadge-status dbadge-$type$ &quot;&gt;$status$&lt;/span&gt;&lt;/div&gt;
-\end
-</pre>
-</div>
-<div created="20181204192835967" creator="Mohammad" modified="20190316194806032" modifier="Mohammad" tags="badge $:/tags/Stylesheet" title="$:/kookma/stylesheet/dbadge" type="text/css">
-<pre>/*Credits: 
-Nishant Srivastava https://codepen.io/nisrulz/pen/bpQWLW
-Mohammad Rahmani: https://github.com/kookma
-*/
-.dbadge {
- display: inline-block;
- margin: 0.0em;
-}
-.dbadge &gt; span {
-  color: #ffffff;
-  font-size: 0.8em;
-  font-weight: 400;
-  line-height: 1;
-  padding: .2em .6em;
-  text-align: center;
-  vertical-align: baseline;
-  white-space: nowrap;}
-
-.dbadge-subject{
-  background-color: #656565;
-  border-bottom-left-radius: 0.25em;
-  border-top-left-radius: 0.25em;}
-.dbadge-status {
-  border-bottom-right-radius: 0.25em;
-  border-top-right-radius: 0.25em;}
-
-.dbadge-primary {
-    background-color: #337ab7;}
-.dbadge-success {
-    background-color: #5cb85c;}
-.dbadge-info {
-    background-color: #5bc0de;}
-.dbadge-warning {
-    background-color: #f0ad4e;}
-.dbadge-danger {
-    background-color: #d9534f;}</pre>
 </div>
 <div created="20181010193706723" creator="Mohammad" modified="20190107194435163" modifier="Mohammad" tags="" title="$:/plugins/.mr/shiraz/images/view-fields.svg">
 <pre>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;tc-image-button tc-image-view-fields&quot; width=&quot;22pt&quot; height=&quot;22pt&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;/&gt;&lt;path d=&quot;M7 11H1v2h6v-2zm2.17-3.24L7.05 5.64 5.64 7.05l2.12 2.12 1.41-1.41zM13 1h-2v6h2V1zm5.36 6.05l-1.41-1.41-2.12 2.12 1.41 1.41 2.12-2.12zM17 11v2h6v-2h-6zm-5-2c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm2.83 7.24l2.12 2.12 1.41-1.41-2.12-2.12-1.41 1.41zm-9.19.71l1.41 1.41 2.12-2.12-1.41-1.41-2.12 2.12zM11 23h2v-6h-2v6z&quot;/&gt;&lt;/svg&gt;</pre>
@@ -9713,6 +9649,71 @@ The wiki-text macros are set of macro for documenting TW codes. Edit this tiddle
 }
 </pre>
 </div>
+<div created="20170625125742486" creator="Mohammad" modified="20190211142138472" modifier="Mohammad" tags="$:/tags/Stylesheet kookma" title="$:/plugins/.mr/shiraz/stylesheet/tw-adjustment" type="text/css">
+<pre>/*
+This tiddler apply the custom stylesheet for Tiddlywiki.
+*/
+
+
+/* TextArea Setting */
+/* un-comment when Codemirror is not installed
+.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor{
+line-height: 1.4em; 
+font-size:0.90em;
+font-family:monospace;}
+**/
+
+/*Edit Buttons As Traffic Lights*/
+.tc-tiddler-controls .tc-image-delete-button {fill:#ebb;}
+.tc-tiddler-controls .tc-image-cancel-button {fill:#ed9;}
+.tc-tiddler-controls .tc-image-done-button {fill:#beb;}
+
+/*Four more button in beautiful color*/
+.tc-tiddler-controls .tc-image-edit-button { fill:#F37B1D; }/*edit tiddler*/
+.tc-tiddler-controls .tc-image-info-button { fill: #0e90d2; } /*Info button*/
+.tc-page-controls .tc-image-new-button { fill: #5EB95E; } /*New tiddler button*/
+.tc-page-controls .tc-image-options-button { fill:#8058A5; } /*Open control pannel*/
+
+
+/* Mouseover Toolbar Visibility: Tobias Beer
+.tc-tiddler-frame .tc-titlebar button {
+opacity: 0;
+transition: opacity .5s ease-in-out;
+}
+.tc-tiddler-frame:hover .tc-titlebar button {
+zoom: 1;
+filter: alpha(opacity=100);
+opacity: 1;
+}
+*/
+
+/* This hack is for adjustment the position of icon in tag-button. 
+vertical-align: text-bottom; chnaged to
+*/
+
+.tc-tag-label svg, .tc-tag-label img{
+    vertical-align: middle;
+}
+
+/* Resolve issue for floating objects which cross the tiddler frame!
+The below code should force the tiddler to always wrap around floating elements, so that they are always inside
+Ref: https://groups.google.com/d/msg/tiddlywiki/5bZwwj6cyac/2LzFeA7AAwAJ
+*/
+
+.tc-tiddler-body:before, .tc-tiddler-body:after {
+	content: &quot;&quot;;
+	display: table;
+}
+.tc-tiddler-body:after {
+	clear: both;
+}
+.tc-tiddler-body {
+	zoom: 1;
+}
+</pre>
+</div>
 <div created="20181112065101520" creator="Mohammad" modified="20181112070203351" modifier="Mohammad" tags="$:/tags/Stylesheet" title="$:/plugins/.mr/shiraz/stylesheet/view-fields" type="text/css">
 <pre>/* set the color of view-fileds button on page controls */
 .tc-page-controls .tc-image-view-fields {fill:#ebb;}</pre>
@@ -9720,7 +9721,10 @@ The wiki-text macros are set of macro for documenting TW codes. Edit this tiddle
 <div created="20180909042646908" creator="Mohammad" modified="20181021074953340" modifier="Mohammad" tags="$:/tags/Stylesheet kookma" title="$:/plugins/.mr/shiraz/stylesheet/wikitext-macro" type="text/css">
 <pre>.doc-example { margin: 1em 0; padding: 0.8em 0; } .doc-example:hover { background-color: #f7f7f9; } .doc-example ul { margin-bottom: 0; padding-bottom: 0; margin-top: 0.2em; } .doc-example pre:first-child { margin-top: 0; } .doc-example-result { border-left: 5px solid #bbb; border-right: 5px solid #bbb; margin-left: 0; margin-right: 0; padding: 0 10px; } .doc-example-result ul { margin-left: 0; padding-left: 10px; } .doc-example-result ol { margin-left: 0; padding-left: 20px; }</pre>
 </div>
-<div created="20181010162537613" creator="Mohammad" description="Toggle field handling in view mode" list-after="$:/core/ui/ViewTemplate/tags" modified="20190321192347012" modifier="Mohammad" tags="kookma" title="$:/plugins/.mr/shiraz/viewtemplate/view-fields">
+<div created="20180307153530187" creator="Mohammad" modified="20181021045435674" modifier="Mohammad" tags="" title="$:/plugins/.mr/shiraz/template/task-management-draggable" type="text/vnd.tiddlywiki">
+<pre>&lt;$checkbox tag=&quot;done&quot;&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/$checkbox&gt;</pre>
+</div>
+<div created="20181010162537613" creator="Mohammad" description="Toggle field handling in view mode" list-after="$:/core/ui/ViewTemplate/tags" modified="20190322212504710" modifier="Mohammad" tags="kookma" title="$:/plugins/.mr/shiraz/viewtemplate/view-fields">
 <pre>\define lingo-base() $:/language/EditTemplate/
 \define config-title()
 $:/config/EditTemplateFields/Visibility/$(currentField)$
@@ -9897,7 +9901,7 @@ $value={{$:/temp/newfieldvalue}}/&gt;
     }
 }</pre>
 </div>
-<div created="20190317180142840" creator="Mohammad" list="$:/kookma/macro/show-macro" modified="20190317180142840" modifier="Mohammad" title="$:/plugins/ajh/favorites/list">
+<div created="20190322201357255" creator="Mohammad" list="$:/Import" modified="20190322201357255" modifier="Mohammad" title="$:/plugins/ajh/favorites/list">
 <pre></pre>
 </div>
 <div author="JeremyRuston" dependents="" description="CodeMirror _Editor" list="readme usage keyboard license" plugin-type="plugin" title="$:/plugins/tiddlywiki/codemirror" type="application/json" version="5.1.18-prerelease">
@@ -10453,74 +10457,6 @@ $value={{$:/temp/newfieldvalue}}/&gt;
 !function(e){var n=&quot;object&quot;==typeof window&amp;&amp;window||&quot;object&quot;==typeof self&amp;&amp;self;&quot;undefined&quot;!=typeof exports?e(exports):n&amp;&amp;(n.hljs=e({}),&quot;function&quot;==typeof define&amp;&amp;define.amd&amp;&amp;define([],function(){return n.hljs}))}(function(e){function n(e){return e.replace(/&amp;/g,&quot;&amp;amp;&quot;).replace(/&lt;/g,&quot;&amp;lt;&quot;).replace(/&gt;/g,&quot;&amp;gt;&quot;)}function t(e){return e.nodeName.toLowerCase()}function r(e,n){var t=e&amp;&amp;e.exec(n);return t&amp;&amp;0===t.index}function a(e){return k.test(e)}function i(e){var n,t,r,i,o=e.className+&quot; &quot;;if(o+=e.parentNode?e.parentNode.className:&quot;&quot;,t=M.exec(o))return w(t[1])?t[1]:&quot;no-highlight&quot;;for(o=o.split(/\s+/),n=0,r=o.length;r&gt;n;n++)if(i=o[n],a(i)||w(i))return i}function o(e){var n,t={},r=Array.prototype.slice.call(arguments,1);for(n in e)t[n]=e[n];return r.forEach(function(e){for(n in e)t[n]=e[n]}),t}function c(e){var n=[];return function r(e,a){for(var i=e.firstChild;i;i=i.nextSibling)3===i.nodeType?a+=i.nodeValue.length:1===i.nodeType&amp;&amp;(n.push({event:&quot;start&quot;,offset:a,node:i}),a=r(i,a),t(i).match(/br|hr|img|input/)||n.push({event:&quot;stop&quot;,offset:a,node:i}));return a}(e,0),n}function u(e,r,a){function i(){return e.length&amp;&amp;r.length?e[0].offset!==r[0].offset?e[0].offset&lt;r[0].offset?e:r:&quot;start&quot;===r[0].event?e:r:e.length?e:r}function o(e){function r(e){return&quot; &quot;+e.nodeName+'=&quot;'+n(e.value).replace('&quot;',&quot;&amp;quot;&quot;)+'&quot;'}l+=&quot;&lt;&quot;+t(e)+E.map.call(e.attributes,r).join(&quot;&quot;)+&quot;&gt;&quot;}function c(e){l+=&quot;&lt;/&quot;+t(e)+&quot;&gt;&quot;}function u(e){(&quot;start&quot;===e.event?o:c)(e.node)}for(var s=0,l=&quot;&quot;,f=[];e.length||r.length;){var g=i();if(l+=n(a.substring(s,g[0].offset)),s=g[0].offset,g===e){f.reverse().forEach(c);do u(g.splice(0,1)[0]),g=i();while(g===e&amp;&amp;g.length&amp;&amp;g[0].offset===s);f.reverse().forEach(o)}else&quot;start&quot;===g[0].event?f.push(g[0].node):f.pop(),u(g.splice(0,1)[0])}return l+n(a.substr(s))}function s(e){return e.v&amp;&amp;!e.cached_variants&amp;&amp;(e.cached_variants=e.v.map(function(n){return o(e,{v:null},n)})),e.cached_variants||e.eW&amp;&amp;[o(e)]||[e]}function l(e){function n(e){return e&amp;&amp;e.source||e}function t(t,r){return new RegExp(n(t),&quot;m&quot;+(e.cI?&quot;i&quot;:&quot;&quot;)+(r?&quot;g&quot;:&quot;&quot;))}function r(a,i){if(!a.compiled){if(a.compiled=!0,a.k=a.k||a.bK,a.k){var o={},c=function(n,t){e.cI&amp;&amp;(t=t.toLowerCase()),t.split(&quot; &quot;).forEach(function(e){var t=e.split(&quot;|&quot;);o[t[0]]=[n,t[1]?Number(t[1]):1]})};&quot;string&quot;==typeof a.k?c(&quot;keyword&quot;,a.k):B(a.k).forEach(function(e){c(e,a.k[e])}),a.k=o}a.lR=t(a.l||/\w+/,!0),i&amp;&amp;(a.bK&amp;&amp;(a.b=&quot;\\b(&quot;+a.bK.split(&quot; &quot;).join(&quot;|&quot;)+&quot;)\\b&quot;),a.b||(a.b=/\B|\b/),a.bR=t(a.b),a.endSameAsBegin&amp;&amp;(a.e=a.b),a.e||a.eW||(a.e=/\B|\b/),a.e&amp;&amp;(a.eR=t(a.e)),a.tE=n(a.e)||&quot;&quot;,a.eW&amp;&amp;i.tE&amp;&amp;(a.tE+=(a.e?&quot;|&quot;:&quot;&quot;)+i.tE)),a.i&amp;&amp;(a.iR=t(a.i)),null==a.r&amp;&amp;(a.r=1),a.c||(a.c=[]),a.c=Array.prototype.concat.apply([],a.c.map(function(e){return s(&quot;self&quot;===e?a:e)})),a.c.forEach(function(e){r(e,a)}),a.starts&amp;&amp;r(a.starts,i);var u=a.c.map(function(e){return e.bK?&quot;\\.?(&quot;+e.b+&quot;)\\.?&quot;:e.b}).concat([a.tE,a.i]).map(n).filter(Boolean);a.t=u.length?t(u.join(&quot;|&quot;),!0):{exec:function(){return null}}}}r(e)}function f(e,t,a,i){function o(e){return new RegExp(e.replace(/[-\/\\^$*+?.()|[\]{}]/g,&quot;\\$&amp;&quot;),&quot;m&quot;)}function c(e,n){var t,a;for(t=0,a=n.c.length;a&gt;t;t++)if(r(n.c[t].bR,e))return n.c[t].endSameAsBegin&amp;&amp;(n.c[t].eR=o(n.c[t].bR.exec(e)[0])),n.c[t]}function u(e,n){if(r(e.eR,n)){for(;e.endsParent&amp;&amp;e.parent;)e=e.parent;return e}return e.eW?u(e.parent,n):void 0}function s(e,n){return!a&amp;&amp;r(n.iR,e)}function p(e,n){var t=R.cI?n[0].toLowerCase():n[0];return e.k.hasOwnProperty(t)&amp;&amp;e.k[t]}function d(e,n,t,r){var a=r?&quot;&quot;:j.classPrefix,i='&lt;span class=&quot;'+a,o=t?&quot;&quot;:I;return i+=e+'&quot;&gt;',i+n+o}function h(){var e,t,r,a;if(!E.k)return n(k);for(a=&quot;&quot;,t=0,E.lR.lastIndex=0,r=E.lR.exec(k);r;)a+=n(k.substring(t,r.index)),e=p(E,r),e?(M+=e[1],a+=d(e[0],n(r[0]))):a+=n(r[0]),t=E.lR.lastIndex,r=E.lR.exec(k);return a+n(k.substr(t))}function b(){var e=&quot;string&quot;==typeof E.sL;if(e&amp;&amp;!L[E.sL])return n(k);var t=e?f(E.sL,k,!0,B[E.sL]):g(k,E.sL.length?E.sL:void 0);return E.r&gt;0&amp;&amp;(M+=t.r),e&amp;&amp;(B[E.sL]=t.top),d(t.language,t.value,!1,!0)}function v(){y+=null!=E.sL?b():h(),k=&quot;&quot;}function m(e){y+=e.cN?d(e.cN,&quot;&quot;,!0):&quot;&quot;,E=Object.create(e,{parent:{value:E}})}function N(e,n){if(k+=e,null==n)return v(),0;var t=c(n,E);if(t)return t.skip?k+=n:(t.eB&amp;&amp;(k+=n),v(),t.rB||t.eB||(k=n)),m(t,n),t.rB?0:n.length;var r=u(E,n);if(r){var a=E;a.skip?k+=n:(a.rE||a.eE||(k+=n),v(),a.eE&amp;&amp;(k=n));do E.cN&amp;&amp;(y+=I),E.skip||E.sL||(M+=E.r),E=E.parent;while(E!==r.parent);return r.starts&amp;&amp;(r.endSameAsBegin&amp;&amp;(r.starts.eR=r.eR),m(r.starts,&quot;&quot;)),a.rE?0:n.length}if(s(n,E))throw new Error('Illegal lexeme &quot;'+n+'&quot; for mode &quot;'+(E.cN||&quot;&lt;unnamed&gt;&quot;)+'&quot;');return k+=n,n.length||1}var R=w(e);if(!R)throw new Error('Unknown language: &quot;'+e+'&quot;');l(R);var x,E=i||R,B={},y=&quot;&quot;;for(x=E;x!==R;x=x.parent)x.cN&amp;&amp;(y=d(x.cN,&quot;&quot;,!0)+y);var k=&quot;&quot;,M=0;try{for(var C,A,S=0;;){if(E.t.lastIndex=S,C=E.t.exec(t),!C)break;A=N(t.substring(S,C.index),C[0]),S=C.index+A}for(N(t.substr(S)),x=E;x.parent;x=x.parent)x.cN&amp;&amp;(y+=I);return{r:M,value:y,language:e,top:E}}catch(O){if(O.message&amp;&amp;-1!==O.message.indexOf(&quot;Illegal&quot;))return{r:0,value:n(t)};throw O}}function g(e,t){t=t||j.languages||B(L);var r={r:0,value:n(e)},a=r;return t.filter(w).filter(x).forEach(function(n){var t=f(n,e,!1);t.language=n,t.r&gt;a.r&amp;&amp;(a=t),t.r&gt;r.r&amp;&amp;(a=r,r=t)}),a.language&amp;&amp;(r.second_best=a),r}function p(e){return j.tabReplace||j.useBR?e.replace(C,function(e,n){return j.useBR&amp;&amp;&quot;\n&quot;===e?&quot;&lt;br&gt;&quot;:j.tabReplace?n.replace(/\t/g,j.tabReplace):&quot;&quot;}):e}function d(e,n,t){var r=n?y[n]:t,a=[e.trim()];return e.match(/\bhljs\b/)||a.push(&quot;hljs&quot;),-1===e.indexOf(r)&amp;&amp;a.push(r),a.join(&quot; &quot;).trim()}function h(e){var n,t,r,o,s,l=i(e);a(l)||(j.useBR?(n=document.createElementNS(&quot;http://www.w3.org/1999/xhtml&quot;,&quot;div&quot;),n.innerHTML=e.innerHTML.replace(/\n/g,&quot;&quot;).replace(/&lt;br[ \/]*&gt;/g,&quot;\n&quot;)):n=e,s=n.textContent,r=l?f(l,s,!0):g(s),t=c(n),t.length&amp;&amp;(o=document.createElementNS(&quot;http://www.w3.org/1999/xhtml&quot;,&quot;div&quot;),o.innerHTML=r.value,r.value=u(t,c(o),s)),r.value=p(r.value),e.innerHTML=r.value,e.className=d(e.className,l,r.language),e.result={language:r.language,re:r.r},r.second_best&amp;&amp;(e.second_best={language:r.second_best.language,re:r.second_best.r}))}function b(e){j=o(j,e)}function v(){if(!v.called){v.called=!0;var e=document.querySelectorAll(&quot;pre code&quot;);E.forEach.call(e,h)}}function m(){addEventListener(&quot;DOMContentLoaded&quot;,v,!1),addEventListener(&quot;load&quot;,v,!1)}function N(n,t){var r=L[n]=t(e);r.aliases&amp;&amp;r.aliases.forEach(function(e){y[e]=n})}function R(){return B(L)}function w(e){return e=(e||&quot;&quot;).toLowerCase(),L[e]||L[y[e]]}function x(e){var n=w(e);return n&amp;&amp;!n.disableAutodetect}var E=[],B=Object.keys,L={},y={},k=/^(no-?highlight|plain|text)$/i,M=/\blang(?:uage)?-([\w-]+)\b/i,C=/((^(&lt;[^&gt;]+&gt;|\t|)+|(?:\n)))/gm,I=&quot;&lt;/span&gt;&quot;,j={classPrefix:&quot;hljs-&quot;,tabReplace:null,useBR:!1,languages:void 0};return e.highlight=f,e.highlightAuto=g,e.fixMarkup=p,e.highlightBlock=h,e.configure=b,e.initHighlighting=v,e.initHighlightingOnLoad=m,e.registerLanguage=N,e.listLanguages=R,e.getLanguage=w,e.autoDetection=x,e.inherit=o,e.IR=&quot;[a-zA-Z]\\w*&quot;,e.UIR=&quot;[a-zA-Z_]\\w*&quot;,e.NR=&quot;\\b\\d+(\\.\\d+)?&quot;,e.CNR=&quot;(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)&quot;,e.BNR=&quot;\\b(0b[01]+)&quot;,e.RSR=&quot;!|!=|!==|%|%=|&amp;|&amp;&amp;|&amp;=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|&lt;&lt;|&lt;&lt;=|&lt;=|&lt;|===|==|=|&gt;&gt;&gt;=|&gt;&gt;=|&gt;=|&gt;&gt;&gt;|&gt;&gt;|&gt;|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~&quot;,e.BE={b:&quot;\\\\[\\s\\S]&quot;,r:0},e.ASM={cN:&quot;string&quot;,b:&quot;'&quot;,e:&quot;'&quot;,i:&quot;\\n&quot;,c:[e.BE]},e.QSM={cN:&quot;string&quot;,b:'&quot;',e:'&quot;',i:&quot;\\n&quot;,c:[e.BE]},e.PWM={b:/\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/},e.C=function(n,t,r){var a=e.inherit({cN:&quot;comment&quot;,b:n,e:t,c:[]},r||{});return a.c.push(e.PWM),a.c.push({cN:&quot;doctag&quot;,b:&quot;(?:TODO|FIXME|NOTE|BUG|XXX):&quot;,r:0}),a},e.CLCM=e.C(&quot;//&quot;,&quot;$&quot;),e.CBCM=e.C(&quot;/\\*&quot;,&quot;\\*/&quot;),e.HCM=e.C(&quot;#&quot;,&quot;$&quot;),e.NM={cN:&quot;number&quot;,b:e.NR,r:0},e.CNM={cN:&quot;number&quot;,b:e.CNR,r:0},e.BNM={cN:&quot;number&quot;,b:e.BNR,r:0},e.CSSNM={cN:&quot;number&quot;,b:e.NR+&quot;(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?&quot;,r:0},e.RM={cN:&quot;regexp&quot;,b:/\//,e:/\/[gimuy]*/,i:/\n/,c:[e.BE,{b:/\[/,e:/\]/,r:0,c:[e.BE]}]},e.TM={cN:&quot;title&quot;,b:e.IR,r:0},e.UTM={cN:&quot;title&quot;,b:e.UIR,r:0},e.METHOD_GUARD={b:&quot;\\.\\s*&quot;+e.UIR,r:0},e});hljs.registerLanguage(&quot;objectivec&quot;,function(e){var t={cN:&quot;built_in&quot;,b:&quot;\\b(AV|CA|CF|CG|CI|CL|CM|CN|CT|MK|MP|MTK|MTL|NS|SCN|SK|UI|WK|XC)\\w+&quot;},_={keyword:&quot;int float while char export sizeof typedef const struct for union unsigned long volatile static bool mutable if do return goto void enum else break extern asm case short default double register explicit signed typename this switch continue wchar_t inline readonly assign readwrite self @synchronized id typeof nonatomic super unichar IBOutlet IBAction strong weak copy in out inout bycopy byref oneway __strong __weak __block __autoreleasing @private @protected @public @try @property @end @throw @catch @finally @autoreleasepool @synthesize @dynamic @selector @optional @required @encode @package @import @defs @compatibility_alias __bridge __bridge_transfer __bridge_retained __bridge_retain __covariant __contravariant __kindof _Nonnull _Nullable _Null_unspecified __FUNCTION__ __PRETTY_FUNCTION__ __attribute__ getter setter retain unsafe_unretained nonnull nullable null_unspecified null_resettable class instancetype NS_DESIGNATED_INITIALIZER NS_UNAVAILABLE NS_REQUIRES_SUPER NS_RETURNS_INNER_POINTER NS_INLINE NS_AVAILABLE NS_DEPRECATED NS_ENUM NS_OPTIONS NS_SWIFT_UNAVAILABLE NS_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_END NS_REFINED_FOR_SWIFT NS_SWIFT_NAME NS_SWIFT_NOTHROW NS_DURING NS_HANDLER NS_ENDHANDLER NS_VALUERETURN NS_VOIDRETURN&quot;,literal:&quot;false true FALSE TRUE nil YES NO NULL&quot;,built_in:&quot;BOOL dispatch_once_t dispatch_queue_t dispatch_sync dispatch_async dispatch_once&quot;},i=/[a-zA-Z@][a-zA-Z0-9_]*/,n=&quot;@interface @class @protocol @implementation&quot;;return{aliases:[&quot;mm&quot;,&quot;objc&quot;,&quot;obj-c&quot;],k:_,l:i,i:&quot;&lt;/&quot;,c:[t,e.CLCM,e.CBCM,e.CNM,e.QSM,{cN:&quot;string&quot;,v:[{b:'@&quot;',e:'&quot;',i:&quot;\\n&quot;,c:[e.BE]},{b:&quot;'&quot;,e:&quot;[^\\\\]'&quot;,i:&quot;[^\\\\][^']&quot;}]},{cN:&quot;meta&quot;,b:&quot;#&quot;,e:&quot;$&quot;,c:[{cN:&quot;meta-string&quot;,v:[{b:'&quot;',e:'&quot;'},{b:&quot;&lt;&quot;,e:&quot;&gt;&quot;}]}]},{cN:&quot;class&quot;,b:&quot;(&quot;+n.split(&quot; &quot;).join(&quot;|&quot;)+&quot;)\\b&quot;,e:&quot;({|$)&quot;,eE:!0,k:n,l:i,c:[e.UTM]},{b:&quot;\\.&quot;+e.UIR,r:0}]}});hljs.registerLanguage(&quot;matlab&quot;,function(e){var a=&quot;('|\\.')+&quot;,s={r:0,c:[{b:a}]};return{k:{keyword:&quot;break case catch classdef continue else elseif end enumerated events for function global if methods otherwise parfor persistent properties return spmd switch try while&quot;,built_in:&quot;sin sind sinh asin asind asinh cos cosd cosh acos acosd acosh tan tand tanh atan atand atan2 atanh sec secd sech asec asecd asech csc cscd csch acsc acscd acsch cot cotd coth acot acotd acoth hypot exp expm1 log log1p log10 log2 pow2 realpow reallog realsqrt sqrt nthroot nextpow2 abs angle complex conj imag real unwrap isreal cplxpair fix floor ceil round mod rem sign airy besselj bessely besselh besseli besselk beta betainc betaln ellipj ellipke erf erfc erfcx erfinv expint gamma gammainc gammaln psi legendre cross dot factor isprime primes gcd lcm rat rats perms nchoosek factorial cart2sph cart2pol pol2cart sph2cart hsv2rgb rgb2hsv zeros ones eye repmat rand randn linspace logspace freqspace meshgrid accumarray size length ndims numel disp isempty isequal isequalwithequalnans cat reshape diag blkdiag tril triu fliplr flipud flipdim rot90 find sub2ind ind2sub bsxfun ndgrid permute ipermute shiftdim circshift squeeze isscalar isvector ans eps realmax realmin pi i inf nan isnan isinf isfinite j why compan gallery hadamard hankel hilb invhilb magic pascal rosser toeplitz vander wilkinson max min nanmax nanmin mean nanmean type table readtable writetable sortrows sort figure plot plot3 scatter scatter3 cellfun legend intersect ismember procrustes hold num2cell &quot;},i:'(//|&quot;|#|/\\*|\\s+/\\w+)',c:[{cN:&quot;function&quot;,bK:&quot;function&quot;,e:&quot;$&quot;,c:[e.UTM,{cN:&quot;params&quot;,v:[{b:&quot;\\(&quot;,e:&quot;\\)&quot;},{b:&quot;\\[&quot;,e:&quot;\\]&quot;}]}]},{cN:&quot;built_in&quot;,b:/true|false/,r:0,starts:s},{b:&quot;[a-zA-Z][a-zA-Z_0-9]*&quot;+a,r:0},{cN:&quot;number&quot;,b:e.CNR,r:0,starts:s},{cN:&quot;string&quot;,b:&quot;'&quot;,e:&quot;'&quot;,c:[e.BE,{b:&quot;''&quot;}]},{b:/\]|}|\)/,r:0,starts:s},{cN:&quot;string&quot;,b:'&quot;',e:'&quot;',c:[e.BE,{b:'&quot;&quot;'}],starts:s},e.C(&quot;^\\s*\\%\\{\\s*$&quot;,&quot;^\\s*\\%\\}\\s*$&quot;),e.C(&quot;\\%&quot;,&quot;$&quot;)]}});hljs.registerLanguage(&quot;sql&quot;,function(e){var t=e.C(&quot;--&quot;,&quot;$&quot;);return{cI:!0,i:/[&lt;&gt;{}*]/,c:[{bK:&quot;begin end start commit rollback savepoint lock alter create drop rename call delete do handler insert load replace select truncate update set show pragma grant merge describe use explain help declare prepare execute deallocate release unlock purge reset change stop analyze cache flush optimize repair kill install uninstall checksum restore check backup revoke comment with&quot;,e:/;/,eW:!0,l:/[\w\.]+/,k:{keyword:&quot;as abort abs absolute acc acce accep accept access accessed accessible account acos action activate add addtime admin administer advanced advise aes_decrypt aes_encrypt after agent aggregate ali alia alias allocate allow alter always analyze ancillary and any anydata anydataset anyschema anytype apply archive archived archivelog are as asc ascii asin assembly assertion associate asynchronous at atan atn2 attr attri attrib attribu attribut attribute attributes audit authenticated authentication authid authors auto autoallocate autodblink autoextend automatic availability avg backup badfile basicfile before begin beginning benchmark between bfile bfile_base big bigfile bin binary_double binary_float binlog bit_and bit_count bit_length bit_or bit_xor bitmap blob_base block blocksize body both bound buffer_cache buffer_pool build bulk by byte byteordermark bytes cache caching call calling cancel capacity cascade cascaded case cast catalog category ceil ceiling chain change changed char_base char_length character_length characters characterset charindex charset charsetform charsetid check checksum checksum_agg child choose chr chunk class cleanup clear client clob clob_base clone close cluster_id cluster_probability cluster_set clustering coalesce coercibility col collate collation collect colu colum column column_value columns columns_updated comment commit compact compatibility compiled complete composite_limit compound compress compute concat concat_ws concurrent confirm conn connec connect connect_by_iscycle connect_by_isleaf connect_by_root connect_time connection consider consistent constant constraint constraints constructor container content contents context contributors controlfile conv convert convert_tz corr corr_k corr_s corresponding corruption cos cost count count_big counted covar_pop covar_samp cpu_per_call cpu_per_session crc32 create creation critical cross cube cume_dist curdate current current_date current_time current_timestamp current_user cursor curtime customdatum cycle data database databases datafile datafiles datalength date_add date_cache date_format date_sub dateadd datediff datefromparts datename datepart datetime2fromparts day day_to_second dayname dayofmonth dayofweek dayofyear days db_role_change dbtimezone ddl deallocate declare decode decompose decrement decrypt deduplicate def defa defau defaul default defaults deferred defi defin define degrees delayed delegate delete delete_all delimited demand dense_rank depth dequeue des_decrypt des_encrypt des_key_file desc descr descri describ describe descriptor deterministic diagnostics difference dimension direct_load directory disable disable_all disallow disassociate discardfile disconnect diskgroup distinct distinctrow distribute distributed div do document domain dotnet double downgrade drop dumpfile duplicate duration each edition editionable editions element ellipsis else elsif elt empty enable enable_all enclosed encode encoding encrypt end end-exec endian enforced engine engines enqueue enterprise entityescaping eomonth error errors escaped evalname evaluate event eventdata events except exception exceptions exchange exclude excluding execu execut execute exempt exists exit exp expire explain export export_set extended extent external external_1 external_2 externally extract failed failed_login_attempts failover failure far fast feature_set feature_value fetch field fields file file_name_convert filesystem_like_logging final finish first first_value fixed flash_cache flashback floor flush following follows for forall force foreign form forma format found found_rows freelist freelists freepools fresh from from_base64 from_days ftp full function general generated get get_format get_lock getdate getutcdate global global_name globally go goto grant grants greatest group group_concat group_id grouping grouping_id groups gtid_subtract guarantee guard handler hash hashkeys having hea head headi headin heading heap help hex hierarchy high high_priority hosts hour http id ident_current ident_incr ident_seed identified identity idle_time if ifnull ignore iif ilike ilm immediate import in include including increment index indexes indexing indextype indicator indices inet6_aton inet6_ntoa inet_aton inet_ntoa infile initial initialized initially initrans inmemory inner innodb input insert install instance instantiable instr interface interleaved intersect into invalidate invisible is is_free_lock is_ipv4 is_ipv4_compat is_not is_not_null is_used_lock isdate isnull isolation iterate java join json json_exists keep keep_duplicates key keys kill language large last last_day last_insert_id last_value lax lcase lead leading least leaves left len lenght length less level levels library like like2 like4 likec limit lines link list listagg little ln load load_file lob lobs local localtime localtimestamp locate locator lock locked log log10 log2 logfile logfiles logging logical logical_reads_per_call logoff logon logs long loop low low_priority lower lpad lrtrim ltrim main make_set makedate maketime managed management manual map mapping mask master master_pos_wait match matched materialized max maxextents maximize maxinstances maxlen maxlogfiles maxloghistory maxlogmembers maxsize maxtrans md5 measures median medium member memcompress memory merge microsecond mid migration min minextents minimum mining minus minute minvalue missing mod mode model modification modify module monitoring month months mount move movement multiset mutex name name_const names nan national native natural nav nchar nclob nested never new newline next nextval no no_write_to_binlog noarchivelog noaudit nobadfile nocheck nocompress nocopy nocycle nodelay nodiscardfile noentityescaping noguarantee nokeep nologfile nomapping nomaxvalue nominimize nominvalue nomonitoring none noneditionable nonschema noorder nopr nopro noprom nopromp noprompt norely noresetlogs noreverse normal norowdependencies noschemacheck noswitch not nothing notice notnull notrim novalidate now nowait nth_value nullif nulls num numb numbe nvarchar nvarchar2 object ocicoll ocidate ocidatetime ociduration ociinterval ociloblocator ocinumber ociref ocirefcursor ocirowid ocistring ocitype oct octet_length of off offline offset oid oidindex old on online only opaque open operations operator optimal optimize option optionally or oracle oracle_date oradata ord ordaudio orddicom orddoc order ordimage ordinality ordvideo organization orlany orlvary out outer outfile outline output over overflow overriding package pad parallel parallel_enable parameters parent parse partial partition partitions pascal passing password password_grace_time password_lock_time password_reuse_max password_reuse_time password_verify_function patch path patindex pctincrease pctthreshold pctused pctversion percent percent_rank percentile_cont percentile_disc performance period period_add period_diff permanent physical pi pipe pipelined pivot pluggable plugin policy position post_transaction pow power pragma prebuilt precedes preceding precision prediction prediction_cost prediction_details prediction_probability prediction_set prepare present preserve prior priority private private_sga privileges procedural procedure procedure_analyze processlist profiles project prompt protection public publishingservername purge quarter query quick quiesce quota quotename radians raise rand range rank raw read reads readsize rebuild record records recover recovery recursive recycle redo reduced ref reference referenced references referencing refresh regexp_like register regr_avgx regr_avgy regr_count regr_intercept regr_r2 regr_slope regr_sxx regr_sxy reject rekey relational relative relaylog release release_lock relies_on relocate rely rem remainder rename repair repeat replace replicate replication required reset resetlogs resize resource respect restore restricted result result_cache resumable resume retention return returning returns reuse reverse revoke right rlike role roles rollback rolling rollup round row row_count rowdependencies rowid rownum rows rtrim rules safe salt sample save savepoint sb1 sb2 sb4 scan schema schemacheck scn scope scroll sdo_georaster sdo_topo_geometry search sec_to_time second section securefile security seed segment select self sequence sequential serializable server servererror session session_user sessions_per_user set sets settings sha sha1 sha2 share shared shared_pool short show shrink shutdown si_averagecolor si_colorhistogram si_featurelist si_positionalcolor si_stillimage si_texture siblings sid sign sin size size_t sizes skip slave sleep smalldatetimefromparts smallfile snapshot some soname sort soundex source space sparse spfile split sql sql_big_result sql_buffer_result sql_cache sql_calc_found_rows sql_small_result sql_variant_property sqlcode sqldata sqlerror sqlname sqlstate sqrt square standalone standby start starting startup statement static statistics stats_binomial_test stats_crosstab stats_ks_test stats_mode stats_mw_test stats_one_way_anova stats_t_test_ stats_t_test_indep stats_t_test_one stats_t_test_paired stats_wsr_test status std stddev stddev_pop stddev_samp stdev stop storage store stored str str_to_date straight_join strcmp strict string struct stuff style subdate subpartition subpartitions substitutable substr substring subtime subtring_index subtype success sum suspend switch switchoffset switchover sync synchronous synonym sys sys_xmlagg sysasm sysaux sysdate sysdatetimeoffset sysdba sysoper system system_user sysutcdatetime table tables tablespace tan tdo template temporary terminated tertiary_weights test than then thread through tier ties time time_format time_zone timediff timefromparts timeout timestamp timestampadd timestampdiff timezone_abbr timezone_minute timezone_region to to_base64 to_date to_days to_seconds todatetimeoffset trace tracking transaction transactional translate translation treat trigger trigger_nestlevel triggers trim truncate try_cast try_convert try_parse type ub1 ub2 ub4 ucase unarchived unbounded uncompress under undo unhex unicode uniform uninstall union unique unix_timestamp unknown unlimited unlock unnest unpivot unrecoverable unsafe unsigned until untrusted unusable unused update updated upgrade upped upper upsert url urowid usable usage use use_stored_outlines user user_data user_resources users using utc_date utc_timestamp uuid uuid_short validate validate_password_strength validation valist value values var var_samp varcharc vari varia variab variabl variable variables variance varp varraw varrawc varray verify version versions view virtual visible void wait wallet warning warnings week weekday weekofyear wellformed when whene whenev wheneve whenever where while whitespace with within without work wrapped xdb xml xmlagg xmlattributes xmlcast xmlcolattval xmlelement xmlexists xmlforest xmlindex xmlnamespaces xmlpi xmlquery xmlroot xmlschema xmlserialize xmltable xmltype xor year year_to_month years yearweek&quot;,literal:&quot;true false null unknown&quot;,built_in:&quot;array bigint binary bit blob bool boolean char character date dec decimal float int int8 integer interval number numeric real record serial serial8 smallint text time timestamp varchar varying void&quot;},c:[{cN:&quot;string&quot;,b:&quot;'&quot;,e:&quot;'&quot;,c:[e.BE,{b:&quot;''&quot;}]},{cN:&quot;string&quot;,b:'&quot;',e:'&quot;',c:[e.BE,{b:'&quot;&quot;'}]},{cN:&quot;string&quot;,b:&quot;`&quot;,e:&quot;`&quot;,c:[e.BE]},e.CNM,e.CBCM,t,e.HCM]},e.CBCM,t,e.HCM]}});hljs.registerLanguage(&quot;julia&quot;,function(e){var r={keyword:&quot;in isa where baremodule begin break catch ccall const continue do else elseif end export false finally for function global if import importall let local macro module quote return true try using while type immutable abstract bitstype typealias &quot;,literal:&quot;true false ARGS C_NULL DevNull ENDIAN_BOM ENV I Inf Inf16 Inf32 Inf64 InsertionSort JULIA_HOME LOAD_PATH MergeSort NaN NaN16 NaN32 NaN64 PROGRAM_FILE QuickSort RoundDown RoundFromZero RoundNearest RoundNearestTiesAway RoundNearestTiesUp RoundToZero RoundUp STDERR STDIN STDOUT VERSION catalan e|0 eu|0 eulergamma golden im nothing pi γ π φ &quot;,built_in:&quot;ANY AbstractArray AbstractChannel AbstractFloat AbstractMatrix AbstractRNG AbstractSerializer AbstractSet AbstractSparseArray AbstractSparseMatrix AbstractSparseVector AbstractString AbstractUnitRange AbstractVecOrMat AbstractVector Any ArgumentError Array AssertionError Associative Base64DecodePipe Base64EncodePipe Bidiagonal BigFloat BigInt BitArray BitMatrix BitVector Bool BoundsError BufferStream CachingPool CapturedException CartesianIndex CartesianRange Cchar Cdouble Cfloat Channel Char Cint Cintmax_t Clong Clonglong ClusterManager Cmd CodeInfo Colon Complex Complex128 Complex32 Complex64 CompositeException Condition ConjArray ConjMatrix ConjVector Cptrdiff_t Cshort Csize_t Cssize_t Cstring Cuchar Cuint Cuintmax_t Culong Culonglong Cushort Cwchar_t Cwstring DataType Date DateFormat DateTime DenseArray DenseMatrix DenseVecOrMat DenseVector Diagonal Dict DimensionMismatch Dims DirectIndexString Display DivideError DomainError EOFError EachLine Enum Enumerate ErrorException Exception ExponentialBackOff Expr Factorization FileMonitor Float16 Float32 Float64 Function Future GlobalRef GotoNode HTML Hermitian IO IOBuffer IOContext IOStream IPAddr IPv4 IPv6 IndexCartesian IndexLinear IndexStyle InexactError InitError Int Int128 Int16 Int32 Int64 Int8 IntSet Integer InterruptException InvalidStateException Irrational KeyError LabelNode LinSpace LineNumberNode LoadError LowerTriangular MIME Matrix MersenneTwister Method MethodError MethodTable Module NTuple NewvarNode NullException Nullable Number ObjectIdDict OrdinalRange OutOfMemoryError OverflowError Pair ParseError PartialQuickSort PermutedDimsArray Pipe PollingFileWatcher ProcessExitedException Ptr QuoteNode RandomDevice Range RangeIndex Rational RawFD ReadOnlyMemoryError Real ReentrantLock Ref Regex RegexMatch RemoteChannel RemoteException RevString RoundingMode RowVector SSAValue SegmentationFault SerializationState Set SharedArray SharedMatrix SharedVector Signed SimpleVector Slot SlotNumber SparseMatrixCSC SparseVector StackFrame StackOverflowError StackTrace StepRange StepRangeLen StridedArray StridedMatrix StridedVecOrMat StridedVector String SubArray SubString SymTridiagonal Symbol Symmetric SystemError TCPSocket Task Text TextDisplay Timer Tridiagonal Tuple Type TypeError TypeMapEntry TypeMapLevel TypeName TypeVar TypedSlot UDPSocket UInt UInt128 UInt16 UInt32 UInt64 UInt8 UndefRefError UndefVarError UnicodeError UniformScaling Union UnionAll UnitRange Unsigned UpperTriangular Val Vararg VecElement VecOrMat Vector VersionNumber Void WeakKeyDict WeakRef WorkerConfig WorkerPool &quot;},t=&quot;[A-Za-z_\\u00A1-\\uFFFF][A-Za-z_0-9\\u00A1-\\uFFFF]*&quot;,a={l:t,k:r,i:/&lt;\//},n={cN:&quot;number&quot;,b:/(\b0x[\d_]*(\.[\d_]*)?|0x\.\d[\d_]*)p[-+]?\d+|\b0[box][a-fA-F0-9][a-fA-F0-9_]*|(\b\d[\d_]*(\.[\d_]*)?|\.\d[\d_]*)([eEfF][-+]?\d+)?/,r:0},o={cN:&quot;string&quot;,b:/'(.|\\[xXuU][a-zA-Z0-9]+)'/},i={cN:&quot;subst&quot;,b:/\$\(/,e:/\)/,k:r},l={cN:&quot;variable&quot;,b:&quot;\\$&quot;+t},c={cN:&quot;string&quot;,c:[e.BE,i,l],v:[{b:/\w*&quot;&quot;&quot;/,e:/&quot;&quot;&quot;\w*/,r:10},{b:/\w*&quot;/,e:/&quot;\w*/}]},s={cN:&quot;string&quot;,c:[e.BE,i,l],b:&quot;`&quot;,e:&quot;`&quot;},d={cN:&quot;meta&quot;,b:&quot;@&quot;+t},u={cN:&quot;comment&quot;,v:[{b:&quot;#=&quot;,e:&quot;=#&quot;,r:10},{b:&quot;#&quot;,e:&quot;$&quot;}]};return a.c=[n,o,c,s,d,u,e.HCM,{cN:&quot;keyword&quot;,b:&quot;\\b(((abstract|primitive)\\s+)type|(mutable\\s+)?struct)\\b&quot;},{b:/&lt;:/}],i.c=a.c,a});hljs.registerLanguage(&quot;xml&quot;,function(s){var e=&quot;[A-Za-z0-9\\._:-]+&quot;,t={eW:!0,i:/&lt;/,r:0,c:[{cN:&quot;attr&quot;,b:e,r:0},{b:/=\s*/,r:0,c:[{cN:&quot;string&quot;,endsParent:!0,v:[{b:/&quot;/,e:/&quot;/},{b:/'/,e:/'/},{b:/[^\s&quot;'=&lt;&gt;`]+/}]}]}]};return{aliases:[&quot;html&quot;,&quot;xhtml&quot;,&quot;rss&quot;,&quot;atom&quot;,&quot;xjb&quot;,&quot;xsd&quot;,&quot;xsl&quot;,&quot;plist&quot;],cI:!0,c:[{cN:&quot;meta&quot;,b:&quot;&lt;!DOCTYPE&quot;,e:&quot;&gt;&quot;,r:10,c:[{b:&quot;\\[&quot;,e:&quot;\\]&quot;}]},s.C(&quot;&lt;!--&quot;,&quot;--&gt;&quot;,{r:10}),{b:&quot;&lt;\\!\\[CDATA\\[&quot;,e:&quot;\\]\\]&gt;&quot;,r:10},{cN:&quot;meta&quot;,b:/&lt;\?xml/,e:/\?&gt;/,r:10},{b:/&lt;\?(php)?/,e:/\?&gt;/,sL:&quot;php&quot;,c:[{b:&quot;/\\*&quot;,e:&quot;\\*/&quot;,skip:!0},{b:'b&quot;',e:'&quot;',skip:!0},{b:&quot;b'&quot;,e:&quot;'&quot;,skip:!0},s.inherit(s.ASM,{i:null,cN:null,c:null,skip:!0}),s.inherit(s.QSM,{i:null,cN:null,c:null,skip:!0})]},{cN:&quot;tag&quot;,b:&quot;&lt;style(?=\\s|&gt;|$)&quot;,e:&quot;&gt;&quot;,k:{name:&quot;style&quot;},c:[t],starts:{e:&quot;&lt;/style&gt;&quot;,rE:!0,sL:[&quot;css&quot;,&quot;xml&quot;]}},{cN:&quot;tag&quot;,b:&quot;&lt;script(?=\\s|&gt;|$)&quot;,e:&quot;&gt;&quot;,k:{name:&quot;script&quot;},c:[t],starts:{e:&quot;&lt;/script&gt;&quot;,rE:!0,sL:[&quot;actionscript&quot;,&quot;javascript&quot;,&quot;handlebars&quot;,&quot;xml&quot;]}},{cN:&quot;tag&quot;,b:&quot;&lt;/?&quot;,e:&quot;/?&gt;&quot;,c:[{cN:&quot;name&quot;,b:/[^\/&gt;&lt;\s]+/,r:0},t]}]}});hljs.registerLanguage(&quot;markdown&quot;,function(e){return{aliases:[&quot;md&quot;,&quot;mkdown&quot;,&quot;mkd&quot;],c:[{cN:&quot;section&quot;,v:[{b:&quot;^#{1,6}&quot;,e:&quot;$&quot;},{b:&quot;^.+?\\n[=-]{2,}$&quot;}]},{b:&quot;&lt;&quot;,e:&quot;&gt;&quot;,sL:&quot;xml&quot;,r:0},{cN:&quot;bullet&quot;,b:&quot;^([*+-]|(\\d+\\.))\\s+&quot;},{cN:&quot;strong&quot;,b:&quot;[*_]{2}.+?[*_]{2}&quot;},{cN:&quot;emphasis&quot;,v:[{b:&quot;\\*.+?\\*&quot;},{b:&quot;_.+?_&quot;,r:0}]},{cN:&quot;quote&quot;,b:&quot;^&gt;\\s+&quot;,e:&quot;$&quot;},{cN:&quot;code&quot;,v:[{b:&quot;^```w*s*$&quot;,e:&quot;^```s*$&quot;},{b:&quot;`.+?`&quot;},{b:&quot;^( {4}|	)&quot;,e:&quot;$&quot;,r:0}]},{b:&quot;^[-\\*]{3,}&quot;,e:&quot;$&quot;},{b:&quot;\\[.+?\\][\\(\\[].*?[\\)\\]]&quot;,rB:!0,c:[{cN:&quot;string&quot;,b:&quot;\\[&quot;,e:&quot;\\]&quot;,eB:!0,rE:!0,r:0},{cN:&quot;link&quot;,b:&quot;\\]\\(&quot;,e:&quot;\\)&quot;,eB:!0,eE:!0},{cN:&quot;symbol&quot;,b:&quot;\\]\\[&quot;,e:&quot;\\]&quot;,eB:!0,eE:!0}],r:10},{b:/^\[[^\n]+\]:/,rB:!0,c:[{cN:&quot;symbol&quot;,b:/\[/,e:/\]/,eB:!0,eE:!0},{cN:&quot;link&quot;,b:/:\s*/,e:/$/,eB:!0}]}]}});hljs.registerLanguage(&quot;perl&quot;,function(e){var t=&quot;getpwent getservent quotemeta msgrcv scalar kill dbmclose undef lc ma syswrite tr send umask sysopen shmwrite vec qx utime local oct semctl localtime readpipe do return format read sprintf dbmopen pop getpgrp not getpwnam rewinddir qqfileno qw endprotoent wait sethostent bless s|0 opendir continue each sleep endgrent shutdown dump chomp connect getsockname die socketpair close flock exists index shmgetsub for endpwent redo lstat msgctl setpgrp abs exit select print ref gethostbyaddr unshift fcntl syscall goto getnetbyaddr join gmtime symlink semget splice x|0 getpeername recv log setsockopt cos last reverse gethostbyname getgrnam study formline endhostent times chop length gethostent getnetent pack getprotoent getservbyname rand mkdir pos chmod y|0 substr endnetent printf next open msgsnd readdir use unlink getsockopt getpriority rindex wantarray hex system getservbyport endservent int chr untie rmdir prototype tell listen fork shmread ucfirst setprotoent else sysseek link getgrgid shmctl waitpid unpack getnetbyname reset chdir grep split require caller lcfirst until warn while values shift telldir getpwuid my getprotobynumber delete and sort uc defined srand accept package seekdir getprotobyname semop our rename seek if q|0 chroot sysread setpwent no crypt getc chown sqrt write setnetent setpriority foreach tie sin msgget map stat getlogin unless elsif truncate exec keys glob tied closedirioctl socket readlink eval xor readline binmode setservent eof ord bind alarm pipe atan2 getgrent exp time push setgrent gt lt or ne m|0 break given say state when&quot;,r={cN:&quot;subst&quot;,b:&quot;[$@]\\{&quot;,e:&quot;\\}&quot;,k:t},s={b:&quot;-&gt;{&quot;,e:&quot;}&quot;},n={v:[{b:/\$\d/},{b:/[\$%@](\^\w\b|#\w+(::\w+)*|{\w+}|\w+(::\w*)*)/},{b:/[\$%@][^\s\w{]/,r:0}]},i=[e.BE,r,n],o=[n,e.HCM,e.C(&quot;^\\=\\w&quot;,&quot;\\=cut&quot;,{eW:!0}),s,{cN:&quot;string&quot;,c:i,v:[{b:&quot;q[qwxr]?\\s*\\(&quot;,e:&quot;\\)&quot;,r:5},{b:&quot;q[qwxr]?\\s*\\[&quot;,e:&quot;\\]&quot;,r:5},{b:&quot;q[qwxr]?\\s*\\{&quot;,e:&quot;\\}&quot;,r:5},{b:&quot;q[qwxr]?\\s*\\|&quot;,e:&quot;\\|&quot;,r:5},{b:&quot;q[qwxr]?\\s*\\&lt;&quot;,e:&quot;\\&gt;&quot;,r:5},{b:&quot;qw\\s+q&quot;,e:&quot;q&quot;,r:5},{b:&quot;'&quot;,e:&quot;'&quot;,c:[e.BE]},{b:'&quot;',e:'&quot;'},{b:&quot;`&quot;,e:&quot;`&quot;,c:[e.BE]},{b:&quot;{\\w+}&quot;,c:[],r:0},{b:&quot;-?\\w+\\s*\\=\\&gt;&quot;,c:[],r:0}]},{cN:&quot;number&quot;,b:&quot;(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b&quot;,r:0},{b:&quot;(\\/\\/|&quot;+e.RSR+&quot;|\\b(split|return|print|reverse|grep)\\b)\\s*&quot;,k:&quot;split return print reverse grep&quot;,r:0,c:[e.HCM,{cN:&quot;regexp&quot;,b:&quot;(s|tr|y)/(\\\\.|[^/])*/(\\\\.|[^/])*/[a-z]*&quot;,r:10},{cN:&quot;regexp&quot;,b:&quot;(m|qr)?/&quot;,e:&quot;/[a-z]*&quot;,c:[e.BE],r:0}]},{cN:&quot;function&quot;,bK:&quot;sub&quot;,e:&quot;(\\s*\\(.*?\\))?[;{]&quot;,eE:!0,r:5,c:[e.TM]},{b:&quot;-\\w\\b&quot;,r:0},{b:&quot;^__DATA__$&quot;,e:&quot;^__END__$&quot;,sL:&quot;mojolicious&quot;,c:[{b:&quot;^@@.*&quot;,e:&quot;$&quot;,cN:&quot;comment&quot;}]}];return r.c=o,s.c=o,{aliases:[&quot;pl&quot;,&quot;pm&quot;],l:/[\w\.]+/,k:t,c:o}});hljs.registerLanguage(&quot;java&quot;,function(e){var a=&quot;[À-ʸa-zA-Z_$][À-ʸa-zA-Z_$0-9]*&quot;,t=a+&quot;(&lt;&quot;+a+&quot;(\\s*,\\s*&quot;+a+&quot;)*&gt;)?&quot;,r=&quot;false synchronized int abstract float private char boolean var static null if const for true while long strictfp finally protected import native final void enum else break transient catch instanceof byte super volatile case assert short package default double public try this switch continue throws protected public private module requires exports do&quot;,s=&quot;\\b(0[bB]([01]+[01_]+[01]+|[01]+)|0[xX]([a-fA-F0-9]+[a-fA-F0-9_]+[a-fA-F0-9]+|[a-fA-F0-9]+)|(([\\d]+[\\d_]+[\\d]+|[\\d]+)(\\.([\\d]+[\\d_]+[\\d]+|[\\d]+))?|\\.([\\d]+[\\d_]+[\\d]+|[\\d]+))([eE][-+]?\\d+)?)[lLfF]?&quot;,c={cN:&quot;number&quot;,b:s,r:0};return{aliases:[&quot;jsp&quot;],k:r,i:/&lt;\/|#/,c:[e.C(&quot;/\\*\\*&quot;,&quot;\\*/&quot;,{r:0,c:[{b:/\w+@/,r:0},{cN:&quot;doctag&quot;,b:&quot;@[A-Za-z]+&quot;}]}),e.CLCM,e.CBCM,e.ASM,e.QSM,{cN:&quot;class&quot;,bK:&quot;class interface&quot;,e:/[{;=]/,eE:!0,k:&quot;class interface&quot;,i:/[:&quot;\[\]]/,c:[{bK:&quot;extends implements&quot;},e.UTM]},{bK:&quot;new throw return else&quot;,r:0},{cN:&quot;function&quot;,b:&quot;(&quot;+t+&quot;\\s+)+&quot;+e.UIR+&quot;\\s*\\(&quot;,rB:!0,e:/[{;=]/,eE:!0,k:r,c:[{b:e.UIR+&quot;\\s*\\(&quot;,rB:!0,r:0,c:[e.UTM]},{cN:&quot;params&quot;,b:/\(/,e:/\)/,k:r,r:0,c:[e.ASM,e.QSM,e.CNM,e.CBCM]},e.CLCM,e.CBCM]},c,{cN:&quot;meta&quot;,b:&quot;@[A-Za-z]+&quot;}]}});hljs.registerLanguage(&quot;bash&quot;,function(e){var t={cN:&quot;variable&quot;,v:[{b:/\$[\w\d#@][\w\d_]*/},{b:/\$\{(.*?)}/}]},s={cN:&quot;string&quot;,b:/&quot;/,e:/&quot;/,c:[e.BE,t,{cN:&quot;variable&quot;,b:/\$\(/,e:/\)/,c:[e.BE]}]},a={cN:&quot;string&quot;,b:/'/,e:/'/};return{aliases:[&quot;sh&quot;,&quot;zsh&quot;],l:/\b-?[a-z\._]+\b/,k:{keyword:&quot;if then else elif fi for while in do done case esac function&quot;,literal:&quot;true false&quot;,built_in:&quot;break cd continue eval exec exit export getopts hash pwd readonly return shift test times trap umask unset alias bind builtin caller command declare echo enable help let local logout mapfile printf read readarray source type typeset ulimit unalias set shopt autoload bg bindkey bye cap chdir clone comparguments compcall compctl compdescribe compfiles compgroups compquote comptags comptry compvalues dirs disable disown echotc echoti emulate fc fg float functions getcap getln history integer jobs kill limit log noglob popd print pushd pushln rehash sched setcap setopt stat suspend ttyctl unfunction unhash unlimit unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof zpty zregexparse zsocket zstyle ztcp&quot;,_:&quot;-ne -eq -lt -gt -f -d -e -s -l -a&quot;},c:[{cN:&quot;meta&quot;,b:/^#![^\n]+sh\s*$/,r:10},{cN:&quot;function&quot;,b:/\w[\w\d_]*\s*\(\s*\)\s*\{/,rB:!0,c:[e.inherit(e.TM,{b:/\w[\w\d_]*/})],r:0},e.HCM,s,a,t]}});hljs.registerLanguage(&quot;shell&quot;,function(s){return{aliases:[&quot;console&quot;],c:[{cN:&quot;meta&quot;,b:&quot;^\\s{0,3}[\\w\\d\\[\\]()@-]*[&gt;%$#]&quot;,starts:{e:&quot;$&quot;,sL:&quot;bash&quot;}}]}});hljs.registerLanguage(&quot;fortran&quot;,function(e){var t={cN:&quot;params&quot;,b:&quot;\\(&quot;,e:&quot;\\)&quot;},n={literal:&quot;.False. .True.&quot;,keyword:&quot;access action advance allocatable allocate apostrophe assign assignment associate asynchronous backspace bind blank blockdata call case character class close common complex contains continue cycle data deallocate decimal delim default dimension direct do dowhile double doubleprecision else elseif elsewhere encoding end endassociate endblockdata enddo endfile endforall endfunction endif endinterface endmodule endprocedure endprogram endselect endsubroutine endtype endwhere entry eor equivalence err errmsg exist exit external final file flush fmt forall form format formatted function go goto id if implicit in include inout integer inquire intent interface intrinsic iomsg iolength iostat kind len logical module named namelist nextrec nml none nullify number only open opened operator optional out pad parameter pass nopass pause pending pointer pos position precision print private program protected public quote read readwrite real rec recl recursive result return rewind save select selectcase selecttype sequential stat status stop stream subroutine target then to type unformatted unit use value volatile wait where while write procedure elemental pure sequence import is null new_line block abstract delegate static reference round deferred decorate extends generic non_overridable enum endenum enumerator typealias submodule endsubmodule concurrent contiguous re im endblock non_intrinsic codimension contiguous impure critical endcritical lock unlock error sync all memory images&quot;,built_in:&quot;abs achar acos acosd adjustl adjustr aimag aimax0 aimin0 aint ajmax0 ajmin0 akmax0 akmin0 all allocated alog alog10 amax0 amax1 amin0 amin1 amod anint any asin asind associated atan atan2 atan2d atand bitest bitl bitlr bitrl bjtest bit_size bktest break btest cabs ccos cdabs cdcos cdexp cdlog cdsin cdsqrt ceiling cexp char clog cmplx conjg cos cosd cosh count cpu_time cshift csin csqrt dabs dacos dacosd dasin dasind datan datan2 datan2d datand date date_and_time dble dcmplx dconjg dcos dcosd dcosh dcotan ddim dexp dfloat dflotk dfloti dflotj digits dim dimag dint dlog dlog10 dmax1 dmin1 dmod dnint dot_product dprod dreal dsign dsin dsind dsinh dsqrt dtan dtand dtanh eoshift epsilon errsns exp exponent float floati floatj floatk floor fraction free huge iabs iachar iand ibclr ibits ibset ichar idate idim idint idnint ieor ifix iiabs iiand iibclr iibits iibset iidim iidint iidnnt iieor iifix iint iior iiqint iiqnnt iishft iishftc iisign ilen imax0 imax1 imin0 imin1 imod index inint inot int int1 int2 int4 int8 iqint iqnint ior ishft ishftc isign isnan izext jiand jibclr jibits jibset jidim jidint jidnnt jieor jifix jint jior jiqint jiqnnt jishft jishftc jisign jmax0 jmax1 jmin0 jmin1 jmod jnint jnot jzext kiabs kiand kibclr kibits kibset kidim kidint kidnnt kieor kifix kind kint kior kishft kishftc kisign kmax0 kmax1 kmin0 kmin1 kmod knint knot kzext lbound leadz len len_trim lenlge lge lgt lle llt log log10 logical lshift malloc matmul max max0 max1 maxexponent maxloc maxval merge min min0 min1 minexponent minloc minval mod modulo mvbits nearest nint not nworkers number_of_processors pack popcnt poppar precision present product radix random random_number random_seed range real repeat reshape rrspacing rshift scale scan secnds selected_int_kind selected_real_kind set_exponent shape sign sin sind sinh size sizeof sngl snglq spacing spread sqrt sum system_clock tan tand tanh tiny transfer transpose trim ubound unpack verify command_argument_count get_command get_command_argument get_environment_variable is_iostat_end is_iostat_eor move_alloc extends_type_of same_type_as selected_char_kind acosh asinh atanh c_sizeof bessel_j0 bessel_j1 bessel_jn bessel_y0 bessel_y1 bessel_yn erf hypot log_gamma trailz gamma bge bgt ble blt dshiftl dshiftr maskl maskr shifta shiftl shiftr merge_bits iall iany iparity storage_size parity norm2 erfc erfc_scaled execute_command_line findloc ucobound lcobound num_images this_image image_index atomic_define atomic_ref rank is_contiguous cdabs cdcos cdexp cdlog cdsin cdsqrt cotan cotand dcmplx dconjg dcotan dcotand decode dimag dll_export dll_import doublecomplex dreal dvchk encode find flen getcharqq getcl getdat gettim hfix ibchng identifier imag int1 int2 int4 int8 int16 int32 int64 intc intrup invalop iostat_msg isha ishc ishl jfix lacfar locking locnear map nargs nbreak ndperr ndpexc offset ovefl peekcharqq precfill prompt qabs qacos qacosd qasin qasind qatan qatand qatan2 qcmplx qconjg qcos qcosd qcosh qdim qexp qext qextd qfloat qimag qlog qlog10 qmax1 qmin1 qmod qreal qsign qsin qsind qsinh qsqrt qtan qtand qtanh ran rand randu real32 real64 real128 rewrite segment setdat settim system timer undfl union val virtual volatile zabs zcos zexp zlog zsin zsqrt character_kinds integer_kinds logical_kinds real_kinds c_associated c_f_pointer c_f_procpointer c_funloc c_loc c_int c_short c_long c_long_long c_signed_char c_size_t c_int8_t c_int16_t c_int32_t c_int64_t c_int128_t c_int_least8_t c_int_least16_t c_int_least32_t c_int_least64_t c_int_least128_t c_int_fast8_t c_int_fast16_t c_int_fast32_t c_int_fast64_t c_int_fast128_t c_intmax_t c_intptr_t c_float c_double c_long_double c_float_complex c_double_complex c_long_double_complex c_bool c_char c_ptr c_funptr c_null_funptr c_null_ptr c_new_line c_null_char c_alert c_backspace c_form_feed c_carriage_return c_horizontal_tab c_vertical_tab atomic_int_kind atomic_logical_kind compiler_options compiler_version iostat_inquire_internal_unit lock_type stat_locked stat_locked_other_image stat_stopped_image stat_unlocked character_storage_size error_unit file_storage_size input_unit iostat_end iostat_eor numeric_storage_size output_unit&quot;};return{cI:!0,aliases:[&quot;f90&quot;,&quot;f95&quot;],k:n,i:/\/\*/,c:[e.inherit(e.ASM,{cN:&quot;string&quot;,r:0}),e.inherit(e.QSM,{cN:&quot;string&quot;,r:0}),{cN:&quot;function&quot;,bK:&quot;subroutine function program&quot;,i:&quot;[${=\\n]&quot;,c:[e.UTM,t]},e.C(&quot;!&quot;,&quot;$&quot;,{r:0}),{cN:&quot;number&quot;,b:&quot;(?=\\b|\\+|\\-|\\.)(?:\\.|\\d+\\.?)\\d*([de][+-]?\\d+)?(_[a-z\\d]+)?\\b\\.?&quot;,r:0}]}});hljs.registerLanguage(&quot;json&quot;,function(e){var i={literal:&quot;true false null&quot;},n=[e.QSM,e.CNM],r={e:&quot;,&quot;,eW:!0,eE:!0,c:n,k:i},t={b:&quot;{&quot;,e:&quot;}&quot;,c:[{cN:&quot;attr&quot;,b:/&quot;/,e:/&quot;/,c:[e.BE],i:&quot;\\n&quot;},e.inherit(r,{b:/:/})],i:&quot;\\S&quot;},c={b:&quot;\\[&quot;,e:&quot;\\]&quot;,c:[e.inherit(r)],i:&quot;\\S&quot;};return n.splice(n.length,0,t,c),{c:n,k:i,i:&quot;\\S&quot;}});hljs.registerLanguage(&quot;nginx&quot;,function(e){var r={cN:&quot;variable&quot;,v:[{b:/\$\d+/},{b:/\$\{/,e:/}/},{b:&quot;[\\$\\@]&quot;+e.UIR}]},b={eW:!0,l:&quot;[a-z/_]+&quot;,k:{literal:&quot;on off yes no true false none blocked debug info notice warn error crit select break last permanent redirect kqueue rtsig epoll poll /dev/poll&quot;},r:0,i:&quot;=&gt;&quot;,c:[e.HCM,{cN:&quot;string&quot;,c:[e.BE,r],v:[{b:/&quot;/,e:/&quot;/},{b:/'/,e:/'/}]},{b:&quot;([a-z]+):/&quot;,e:&quot;\\s&quot;,eW:!0,eE:!0,c:[r]},{cN:&quot;regexp&quot;,c:[e.BE,r],v:[{b:&quot;\\s\\^&quot;,e:&quot;\\s|{|;&quot;,rE:!0},{b:&quot;~\\*?\\s+&quot;,e:&quot;\\s|{|;&quot;,rE:!0},{b:&quot;\\*(\\.[a-z\\-]+)+&quot;},{b:&quot;([a-z\\-]+\\.)+\\*&quot;}]},{cN:&quot;number&quot;,b:&quot;\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}(:\\d{1,5})?\\b&quot;},{cN:&quot;number&quot;,b:&quot;\\b\\d+[kKmMgGdshdwy]*\\b&quot;,r:0},r]};return{aliases:[&quot;nginxconf&quot;],c:[e.HCM,{b:e.UIR+&quot;\\s+{&quot;,rB:!0,e:&quot;{&quot;,c:[{cN:&quot;section&quot;,b:e.UIR}],r:0},{b:e.UIR+&quot;\\s&quot;,e:&quot;;|{&quot;,rB:!0,c:[{cN:&quot;attribute&quot;,b:e.UIR,starts:b}],r:0}],i:&quot;[^\\s\\}]&quot;}});hljs.registerLanguage(&quot;ini&quot;,function(e){var b={cN:&quot;string&quot;,c:[e.BE],v:[{b:&quot;'''&quot;,e:&quot;'''&quot;,r:10},{b:'&quot;&quot;&quot;',e:'&quot;&quot;&quot;',r:10},{b:'&quot;',e:'&quot;'},{b:&quot;'&quot;,e:&quot;'&quot;}]};return{aliases:[&quot;toml&quot;],cI:!0,i:/\S/,c:[e.C(&quot;;&quot;,&quot;$&quot;),e.HCM,{cN:&quot;section&quot;,b:/^\s*\[+/,e:/\]+/},{b:/^[a-z0-9\[\]_-]+\s*=\s*/,e:&quot;$&quot;,rB:!0,c:[{cN:&quot;attr&quot;,b:/[a-z0-9\[\]_-]+/},{b:/=/,eW:!0,r:0,c:[{cN:&quot;literal&quot;,b:/\bon|off|true|false|yes|no\b/},{cN:&quot;variable&quot;,v:[{b:/\$[\w\d&quot;][\w\d_]*/},{b:/\$\{(.*?)}/}]},b,{cN:&quot;number&quot;,b:/([\+\-]+)?[\d]+_[\d_]+/},e.NM]}]}]}});hljs.registerLanguage(&quot;http&quot;,function(e){var t=&quot;HTTP/[0-9\\.]+&quot;;return{aliases:[&quot;https&quot;],i:&quot;\\S&quot;,c:[{b:&quot;^&quot;+t,e:&quot;$&quot;,c:[{cN:&quot;number&quot;,b:&quot;\\b\\d{3}\\b&quot;}]},{b:&quot;^[A-Z]+ (.*?) &quot;+t+&quot;$&quot;,rB:!0,e:&quot;$&quot;,c:[{cN:&quot;string&quot;,b:&quot; &quot;,e:&quot; &quot;,eB:!0,eE:!0},{b:t},{cN:&quot;keyword&quot;,b:&quot;[A-Z]+&quot;}]},{cN:&quot;attribute&quot;,b:&quot;^\\w&quot;,e:&quot;: &quot;,eE:!0,i:&quot;\\n|\\s|=&quot;,starts:{e:&quot;$&quot;,r:0}},{b:&quot;\\n\\n&quot;,starts:{sL:[],eW:!0}}]}});hljs.registerLanguage(&quot;css&quot;,function(e){var c=&quot;[a-zA-Z-][a-zA-Z0-9_-]*&quot;,t={b:/[A-Z\_\.\-]+\s*:/,rB:!0,e:&quot;;&quot;,eW:!0,c:[{cN:&quot;attribute&quot;,b:/\S/,e:&quot;:&quot;,eE:!0,starts:{eW:!0,eE:!0,c:[{b:/[\w-]+\(/,rB:!0,c:[{cN:&quot;built_in&quot;,b:/[\w-]+/},{b:/\(/,e:/\)/,c:[e.ASM,e.QSM]}]},e.CSSNM,e.QSM,e.ASM,e.CBCM,{cN:&quot;number&quot;,b:&quot;#[0-9A-Fa-f]+&quot;},{cN:&quot;meta&quot;,b:&quot;!important&quot;}]}}]};return{cI:!0,i:/[=\/|'\$]/,c:[e.CBCM,{cN:&quot;selector-id&quot;,b:/#[A-Za-z0-9_-]+/},{cN:&quot;selector-class&quot;,b:/\.[A-Za-z0-9_-]+/},{cN:&quot;selector-attr&quot;,b:/\[/,e:/\]/,i:&quot;$&quot;},{cN:&quot;selector-pseudo&quot;,b:/:(:)?[a-zA-Z0-9\_\-\+\(\)&quot;'.]+/},{b:&quot;@(font-face|page)&quot;,l:&quot;[a-z-]+&quot;,k:&quot;font-face page&quot;},{b:&quot;@&quot;,e:&quot;[{;]&quot;,i:/:/,c:[{cN:&quot;keyword&quot;,b:/\w+/},{b:/\s/,eW:!0,eE:!0,r:0,c:[e.ASM,e.QSM,e.CSSNM]}]},{cN:&quot;selector-tag&quot;,b:c,r:0},{b:&quot;{&quot;,e:&quot;}&quot;,i:/\S/,c:[e.CBCM,t]}]}});hljs.registerLanguage(&quot;javascript&quot;,function(e){var r=&quot;[A-Za-z$_][0-9A-Za-z$_]*&quot;,t={keyword:&quot;in of if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const export super debugger as async await static import from as&quot;,literal:&quot;true false null undefined NaN Infinity&quot;,built_in:&quot;eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect Promise&quot;},a={cN:&quot;number&quot;,v:[{b:&quot;\\b(0[bB][01]+)&quot;},{b:&quot;\\b(0[oO][0-7]+)&quot;},{b:e.CNR}],r:0},n={cN:&quot;subst&quot;,b:&quot;\\$\\{&quot;,e:&quot;\\}&quot;,k:t,c:[]},c={cN:&quot;string&quot;,b:&quot;`&quot;,e:&quot;`&quot;,c:[e.BE,n]};n.c=[e.ASM,e.QSM,c,a,e.RM];var s=n.c.concat([e.CBCM,e.CLCM]);return{aliases:[&quot;js&quot;,&quot;jsx&quot;],k:t,c:[{cN:&quot;meta&quot;,r:10,b:/^\s*['&quot;]use (strict|asm)['&quot;]/},{cN:&quot;meta&quot;,b:/^#!/,e:/$/},e.ASM,e.QSM,c,e.CLCM,e.CBCM,a,{b:/[{,]\s*/,r:0,c:[{b:r+&quot;\\s*:&quot;,rB:!0,r:0,c:[{cN:&quot;attr&quot;,b:r,r:0}]}]},{b:&quot;(&quot;+e.RSR+&quot;|\\b(case|return|throw)\\b)\\s*&quot;,k:&quot;return throw case&quot;,c:[e.CLCM,e.CBCM,e.RM,{cN:&quot;function&quot;,b:&quot;(\\(.*?\\)|&quot;+r+&quot;)\\s*=&gt;&quot;,rB:!0,e:&quot;\\s*=&gt;&quot;,c:[{cN:&quot;params&quot;,v:[{b:r},{b:/\(\s*\)/},{b:/\(/,e:/\)/,eB:!0,eE:!0,k:t,c:s}]}]},{b:/&lt;/,e:/(\/\w+|\w+\/)&gt;/,sL:&quot;xml&quot;,c:[{b:/&lt;\w+\s*\/&gt;/,skip:!0},{b:/&lt;\w+/,e:/(\/\w+|\w+\/)&gt;/,skip:!0,c:[{b:/&lt;\w+\s*\/&gt;/,skip:!0},&quot;self&quot;]}]}],r:0},{cN:&quot;function&quot;,bK:&quot;function&quot;,e:/\{/,eE:!0,c:[e.inherit(e.TM,{b:r}),{cN:&quot;params&quot;,b:/\(/,e:/\)/,eB:!0,eE:!0,c:s}],i:/\[|%/},{b:/\$[(.]/},e.METHOD_GUARD,{cN:&quot;class&quot;,bK:&quot;class&quot;,e:/[{;=]/,eE:!0,i:/[:&quot;\[\]]/,c:[{bK:&quot;extends&quot;},e.UTM]},{bK:&quot;constructor&quot;,e:/\{/,eE:!0}],i:/#(?!!)/}});hljs.registerLanguage(&quot;makefile&quot;,function(e){var i={cN:&quot;variable&quot;,v:[{b:&quot;\\$\\(&quot;+e.UIR+&quot;\\)&quot;,c:[e.BE]},{b:/\$[@%&lt;?\^\+\*]/}]},r={cN:&quot;string&quot;,b:/&quot;/,e:/&quot;/,c:[e.BE,i]},a={cN:&quot;variable&quot;,b:/\$\([\w-]+\s/,e:/\)/,k:{built_in:&quot;subst patsubst strip findstring filter filter-out sort word wordlist firstword lastword dir notdir suffix basename addsuffix addprefix join wildcard realpath abspath error warning shell origin flavor foreach if or and call eval file value&quot;},c:[i]},n={b:&quot;^&quot;+e.UIR+&quot;\\s*[:+?]?=&quot;,i:&quot;\\n&quot;,rB:!0,c:[{b:&quot;^&quot;+e.UIR,e:&quot;[:+?]?=&quot;,eE:!0}]},t={cN:&quot;meta&quot;,b:/^\.PHONY:/,e:/$/,k:{&quot;meta-keyword&quot;:&quot;.PHONY&quot;},l:/[\.\w]+/},l={cN:&quot;section&quot;,b:/^[^\s]+:/,e:/$/,c:[i]};return{aliases:[&quot;mk&quot;,&quot;mak&quot;],k:&quot;define endef undefine ifdef ifndef ifeq ifneq else endif include -include sinclude override export unexport private vpath&quot;,l:/[\w-]+/,c:[e.HCM,i,r,a,n,t,l]}});hljs.registerLanguage(&quot;ruby&quot;,function(e){var b=&quot;[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|&lt;&lt;|&gt;&gt;|=~|===?|&lt;=&gt;|[&lt;&gt;]=?|\\*\\*|[-/+%^&amp;*~`|]|\\[\\]=?&quot;,r={keyword:&quot;and then defined module in return redo if BEGIN retry end for self when next until do begin unless END rescue else break undef not super class case require yield alias while ensure elsif or include attr_reader attr_writer attr_accessor&quot;,literal:&quot;true false nil&quot;},c={cN:&quot;doctag&quot;,b:&quot;@[A-Za-z]+&quot;},a={b:&quot;#&lt;&quot;,e:&quot;&gt;&quot;},s=[e.C(&quot;#&quot;,&quot;$&quot;,{c:[c]}),e.C(&quot;^\\=begin&quot;,&quot;^\\=end&quot;,{c:[c],r:10}),e.C(&quot;^__END__&quot;,&quot;\\n$&quot;)],n={cN:&quot;subst&quot;,b:&quot;#\\{&quot;,e:&quot;}&quot;,k:r},t={cN:&quot;string&quot;,c:[e.BE,n],v:[{b:/'/,e:/'/},{b:/&quot;/,e:/&quot;/},{b:/`/,e:/`/},{b:&quot;%[qQwWx]?\\(&quot;,e:&quot;\\)&quot;},{b:&quot;%[qQwWx]?\\[&quot;,e:&quot;\\]&quot;},{b:&quot;%[qQwWx]?{&quot;,e:&quot;}&quot;},{b:&quot;%[qQwWx]?&lt;&quot;,e:&quot;&gt;&quot;},{b:&quot;%[qQwWx]?/&quot;,e:&quot;/&quot;},{b:&quot;%[qQwWx]?%&quot;,e:&quot;%&quot;},{b:&quot;%[qQwWx]?-&quot;,e:&quot;-&quot;},{b:&quot;%[qQwWx]?\\|&quot;,e:&quot;\\|&quot;},{b:/\B\?(\\\d{1,3}|\\x[A-Fa-f0-9]{1,2}|\\u[A-Fa-f0-9]{4}|\\?\S)\b/},{b:/&lt;&lt;(-?)\w+$/,e:/^\s*\w+$/}]},i={cN:&quot;params&quot;,b:&quot;\\(&quot;,e:&quot;\\)&quot;,endsParent:!0,k:r},d=[t,a,{cN:&quot;class&quot;,bK:&quot;class module&quot;,e:&quot;$|;&quot;,i:/=/,c:[e.inherit(e.TM,{b:&quot;[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?&quot;}),{b:&quot;&lt;\\s*&quot;,c:[{b:&quot;(&quot;+e.IR+&quot;::)?&quot;+e.IR}]}].concat(s)},{cN:&quot;function&quot;,bK:&quot;def&quot;,e:&quot;$|;&quot;,c:[e.inherit(e.TM,{b:b}),i].concat(s)},{b:e.IR+&quot;::&quot;},{cN:&quot;symbol&quot;,b:e.UIR+&quot;(\\!|\\?)?:&quot;,r:0},{cN:&quot;symbol&quot;,b:&quot;:(?!\\s)&quot;,c:[t,{b:b}],r:0},{cN:&quot;number&quot;,b:&quot;(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b&quot;,r:0},{b:&quot;(\\$\\W)|((\\$|\\@\\@?)(\\w+))&quot;},{cN:&quot;params&quot;,b:/\|/,e:/\|/,k:r},{b:&quot;(&quot;+e.RSR+&quot;|unless)\\s*&quot;,k:&quot;unless&quot;,c:[a,{cN:&quot;regexp&quot;,c:[e.BE,n],i:/\n/,v:[{b:&quot;/&quot;,e:&quot;/[a-z]*&quot;},{b:&quot;%r{&quot;,e:&quot;}[a-z]*&quot;},{b:&quot;%r\\(&quot;,e:&quot;\\)[a-z]*&quot;},{b:&quot;%r!&quot;,e:&quot;![a-z]*&quot;},{b:&quot;%r\\[&quot;,e:&quot;\\][a-z]*&quot;}]}].concat(s),r:0}].concat(s);n.c=d,i.c=d;var l=&quot;[&gt;?]&gt;&quot;,o=&quot;[\\w#]+\\(\\w+\\):\\d+:\\d+&gt;&quot;,u=&quot;(\\w+-)?\\d+\\.\\d+\\.\\d(p\\d+)?[^&gt;]+&gt;&quot;,w=[{b:/^\s*=&gt;/,starts:{e:&quot;$&quot;,c:d}},{cN:&quot;meta&quot;,b:&quot;^(&quot;+l+&quot;|&quot;+o+&quot;|&quot;+u+&quot;)&quot;,starts:{e:&quot;$&quot;,c:d}}];return{aliases:[&quot;rb&quot;,&quot;gemspec&quot;,&quot;podspec&quot;,&quot;thor&quot;,&quot;irb&quot;],k:r,i:/\/\*/,c:s.concat(w).concat(d)}});hljs.registerLanguage(&quot;excel&quot;,function(E){return{aliases:[&quot;xlsx&quot;,&quot;xls&quot;],cI:!0,l:/[a-zA-Z][\w\.]*/,k:{built_in:&quot;ABS ACCRINT ACCRINTM ACOS ACOSH ACOT ACOTH AGGREGATE ADDRESS AMORDEGRC AMORLINC AND ARABIC AREAS ASC ASIN ASINH ATAN ATAN2 ATANH AVEDEV AVERAGE AVERAGEA AVERAGEIF AVERAGEIFS BAHTTEXT BASE BESSELI BESSELJ BESSELK BESSELY BETADIST BETA.DIST BETAINV BETA.INV BIN2DEC BIN2HEX BIN2OCT BINOMDIST BINOM.DIST BINOM.DIST.RANGE BINOM.INV BITAND BITLSHIFT BITOR BITRSHIFT BITXOR CALL CEILING CEILING.MATH CEILING.PRECISE CELL CHAR CHIDIST CHIINV CHITEST CHISQ.DIST CHISQ.DIST.RT CHISQ.INV CHISQ.INV.RT CHISQ.TEST CHOOSE CLEAN CODE COLUMN COLUMNS COMBIN COMBINA COMPLEX CONCAT CONCATENATE CONFIDENCE CONFIDENCE.NORM CONFIDENCE.T CONVERT CORREL COS COSH COT COTH COUNT COUNTA COUNTBLANK COUNTIF COUNTIFS COUPDAYBS COUPDAYS COUPDAYSNC COUPNCD COUPNUM COUPPCD COVAR COVARIANCE.P COVARIANCE.S CRITBINOM CSC CSCH CUBEKPIMEMBER CUBEMEMBER CUBEMEMBERPROPERTY CUBERANKEDMEMBER CUBESET CUBESETCOUNT CUBEVALUE CUMIPMT CUMPRINC DATE DATEDIF DATEVALUE DAVERAGE DAY DAYS DAYS360 DB DBCS DCOUNT DCOUNTA DDB DEC2BIN DEC2HEX DEC2OCT DECIMAL DEGREES DELTA DEVSQ DGET DISC DMAX DMIN DOLLAR DOLLARDE DOLLARFR DPRODUCT DSTDEV DSTDEVP DSUM DURATION DVAR DVARP EDATE EFFECT ENCODEURL EOMONTH ERF ERF.PRECISE ERFC ERFC.PRECISE ERROR.TYPE EUROCONVERT EVEN EXACT EXP EXPON.DIST EXPONDIST FACT FACTDOUBLE FALSE|0 F.DIST FDIST F.DIST.RT FILTERXML FIND FINDB F.INV F.INV.RT FINV FISHER FISHERINV FIXED FLOOR FLOOR.MATH FLOOR.PRECISE FORECAST FORECAST.ETS FORECAST.ETS.CONFINT FORECAST.ETS.SEASONALITY FORECAST.ETS.STAT FORECAST.LINEAR FORMULATEXT FREQUENCY F.TEST FTEST FV FVSCHEDULE GAMMA GAMMA.DIST GAMMADIST GAMMA.INV GAMMAINV GAMMALN GAMMALN.PRECISE GAUSS GCD GEOMEAN GESTEP GETPIVOTDATA GROWTH HARMEAN HEX2BIN HEX2DEC HEX2OCT HLOOKUP HOUR HYPERLINK HYPGEOM.DIST HYPGEOMDIST IF|0 IFERROR IFNA IFS IMABS IMAGINARY IMARGUMENT IMCONJUGATE IMCOS IMCOSH IMCOT IMCSC IMCSCH IMDIV IMEXP IMLN IMLOG10 IMLOG2 IMPOWER IMPRODUCT IMREAL IMSEC IMSECH IMSIN IMSINH IMSQRT IMSUB IMSUM IMTAN INDEX INDIRECT INFO INT INTERCEPT INTRATE IPMT IRR ISBLANK ISERR ISERROR ISEVEN ISFORMULA ISLOGICAL ISNA ISNONTEXT ISNUMBER ISODD ISREF ISTEXT ISO.CEILING ISOWEEKNUM ISPMT JIS KURT LARGE LCM LEFT LEFTB LEN LENB LINEST LN LOG LOG10 LOGEST LOGINV LOGNORM.DIST LOGNORMDIST LOGNORM.INV LOOKUP LOWER MATCH MAX MAXA MAXIFS MDETERM MDURATION MEDIAN MID MIDBs MIN MINIFS MINA MINUTE MINVERSE MIRR MMULT MOD MODE MODE.MULT MODE.SNGL MONTH MROUND MULTINOMIAL MUNIT N NA NEGBINOM.DIST NEGBINOMDIST NETWORKDAYS NETWORKDAYS.INTL NOMINAL NORM.DIST NORMDIST NORMINV NORM.INV NORM.S.DIST NORMSDIST NORM.S.INV NORMSINV NOT NOW NPER NPV NUMBERVALUE OCT2BIN OCT2DEC OCT2HEX ODD ODDFPRICE ODDFYIELD ODDLPRICE ODDLYIELD OFFSET OR PDURATION PEARSON PERCENTILE.EXC PERCENTILE.INC PERCENTILE PERCENTRANK.EXC PERCENTRANK.INC PERCENTRANK PERMUT PERMUTATIONA PHI PHONETIC PI PMT POISSON.DIST POISSON POWER PPMT PRICE PRICEDISC PRICEMAT PROB PRODUCT PROPER PV QUARTILE QUARTILE.EXC QUARTILE.INC QUOTIENT RADIANS RAND RANDBETWEEN RANK.AVG RANK.EQ RANK RATE RECEIVED REGISTER.ID REPLACE REPLACEB REPT RIGHT RIGHTB ROMAN ROUND ROUNDDOWN ROUNDUP ROW ROWS RRI RSQ RTD SEARCH SEARCHB SEC SECH SECOND SERIESSUM SHEET SHEETS SIGN SIN SINH SKEW SKEW.P SLN SLOPE SMALL SQL.REQUEST SQRT SQRTPI STANDARDIZE STDEV STDEV.P STDEV.S STDEVA STDEVP STDEVPA STEYX SUBSTITUTE SUBTOTAL SUM SUMIF SUMIFS SUMPRODUCT SUMSQ SUMX2MY2 SUMX2PY2 SUMXMY2 SWITCH SYD T TAN TANH TBILLEQ TBILLPRICE TBILLYIELD T.DIST T.DIST.2T T.DIST.RT TDIST TEXT TEXTJOIN TIME TIMEVALUE T.INV T.INV.2T TINV TODAY TRANSPOSE TREND TRIM TRIMMEAN TRUE|0 TRUNC T.TEST TTEST TYPE UNICHAR UNICODE UPPER VALUE VAR VAR.P VAR.S VARA VARP VARPA VDB VLOOKUP WEBSERVICE WEEKDAY WEEKNUM WEIBULL WEIBULL.DIST WORKDAY WORKDAY.INTL XIRR XNPV XOR YEAR YEARFRAC YIELD YIELDDISC YIELDMAT Z.TEST ZTEST&quot;},c:[{b:/^=/,e:/[^=]/,rE:!0,i:/=/,r:10},{cN:&quot;symbol&quot;,b:/\b[A-Z]{1,2}\d+\b/,e:/[^\d]/,eE:!0,r:0},{cN:&quot;symbol&quot;,b:/[A-Z]{0,2}\d*:[A-Z]{0,2}\d*/,r:0},E.BE,E.QSM,{cN:&quot;number&quot;,b:E.NR+&quot;(%)?&quot;,r:0},E.C(/\bN\(/,/\)/,{eB:!0,eE:!0,i:/\n/})]}});hljs.registerLanguage(&quot;cs&quot;,function(e){var i={keyword:&quot;abstract as base bool break byte case catch char checked const continue decimal default delegate do double enum event explicit extern finally fixed float for foreach goto if implicit in int interface internal is lock long nameof object operator out override params private protected public readonly ref sbyte sealed short sizeof stackalloc static string struct switch this try typeof uint ulong unchecked unsafe ushort using virtual void volatile while add alias ascending async await by descending dynamic equals from get global group into join let on orderby partial remove select set value var where yield&quot;,literal:&quot;null false true&quot;},r={cN:&quot;number&quot;,v:[{b:&quot;\\b(0b[01']+)&quot;},{b:&quot;(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)&quot;},{b:&quot;(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)&quot;}],r:0},t={cN:&quot;string&quot;,b:'@&quot;',e:'&quot;',c:[{b:'&quot;&quot;'}]},a=e.inherit(t,{i:/\n/}),c={cN:&quot;subst&quot;,b:&quot;{&quot;,e:&quot;}&quot;,k:i},n=e.inherit(c,{i:/\n/}),s={cN:&quot;string&quot;,b:/\$&quot;/,e:'&quot;',i:/\n/,c:[{b:&quot;{{&quot;},{b:&quot;}}&quot;},e.BE,n]},b={cN:&quot;string&quot;,b:/\$@&quot;/,e:'&quot;',c:[{b:&quot;{{&quot;},{b:&quot;}}&quot;},{b:'&quot;&quot;'},c]},l=e.inherit(b,{i:/\n/,c:[{b:&quot;{{&quot;},{b:&quot;}}&quot;},{b:'&quot;&quot;'},n]});c.c=[b,s,t,e.ASM,e.QSM,r,e.CBCM],n.c=[l,s,a,e.ASM,e.QSM,r,e.inherit(e.CBCM,{i:/\n/})];var o={v:[b,s,t,e.ASM,e.QSM]},d=e.IR+&quot;(&lt;&quot;+e.IR+&quot;(\\s*,\\s*&quot;+e.IR+&quot;)*&gt;)?(\\[\\])?&quot;;return{aliases:[&quot;csharp&quot;],k:i,i:/::/,c:[e.C(&quot;///&quot;,&quot;$&quot;,{rB:!0,c:[{cN:&quot;doctag&quot;,v:[{b:&quot;///&quot;,r:0},{b:&quot;&lt;!--|--&gt;&quot;},{b:&quot;&lt;/?&quot;,e:&quot;&gt;&quot;}]}]}),e.CLCM,e.CBCM,{cN:&quot;meta&quot;,b:&quot;#&quot;,e:&quot;$&quot;,k:{&quot;meta-keyword&quot;:&quot;if else elif endif define undef warning error line region endregion pragma checksum&quot;}},o,r,{bK:&quot;class interface&quot;,e:/[{;=]/,i:/[^\s:,]/,c:[e.TM,e.CLCM,e.CBCM]},{bK:&quot;namespace&quot;,e:/[{;=]/,i:/[^\s:]/,c:[e.inherit(e.TM,{b:&quot;[a-zA-Z](\\.?\\w)*&quot;}),e.CLCM,e.CBCM]},{cN:&quot;meta&quot;,b:&quot;^\\s*\\[&quot;,eB:!0,e:&quot;\\]&quot;,eE:!0,c:[{cN:&quot;meta-string&quot;,b:/&quot;/,e:/&quot;/}]},{bK:&quot;new return throw await else&quot;,r:0},{cN:&quot;function&quot;,b:&quot;(&quot;+d+&quot;\\s+)+&quot;+e.IR+&quot;\\s*\\(&quot;,rB:!0,e:/\s*[{;=]/,eE:!0,k:i,c:[{b:e.IR+&quot;\\s*\\(&quot;,rB:!0,c:[e.TM],r:0},{cN:&quot;params&quot;,b:/\(/,e:/\)/,eB:!0,eE:!0,k:i,r:0,c:[o,r,e.CBCM]},e.CLCM,e.CBCM]}]}});hljs.registerLanguage(&quot;coffeescript&quot;,function(e){var c={keyword:&quot;in if for while finally new do return else break catch instanceof throw try this switch continue typeof delete debugger super yield import export from as default await then unless until loop of by when and or is isnt not&quot;,literal:&quot;true false null undefined yes no on off&quot;,built_in:&quot;npm require console print module global window document&quot;},n=&quot;[A-Za-z$_][0-9A-Za-z$_]*&quot;,r={cN:&quot;subst&quot;,b:/#\{/,e:/}/,k:c},i=[e.BNM,e.inherit(e.CNM,{starts:{e:&quot;(\\s*/)?&quot;,r:0}}),{cN:&quot;string&quot;,v:[{b:/'''/,e:/'''/,c:[e.BE]},{b:/'/,e:/'/,c:[e.BE]},{b:/&quot;&quot;&quot;/,e:/&quot;&quot;&quot;/,c:[e.BE,r]},{b:/&quot;/,e:/&quot;/,c:[e.BE,r]}]},{cN:&quot;regexp&quot;,v:[{b:&quot;///&quot;,e:&quot;///&quot;,c:[r,e.HCM]},{b:&quot;//[gim]*&quot;,r:0},{b:/\/(?![ *])(\\\/|.)*?\/[gim]*(?=\W|$)/}]},{b:&quot;@&quot;+n},{sL:&quot;javascript&quot;,eB:!0,eE:!0,v:[{b:&quot;```&quot;,e:&quot;```&quot;},{b:&quot;`&quot;,e:&quot;`&quot;}]}];r.c=i;var s=e.inherit(e.TM,{b:n}),t=&quot;(\\(.*\\))?\\s*\\B[-=]&gt;&quot;,o={cN:&quot;params&quot;,b:&quot;\\([^\\(]&quot;,rB:!0,c:[{b:/\(/,e:/\)/,k:c,c:[&quot;self&quot;].concat(i)}]};return{aliases:[&quot;coffee&quot;,&quot;cson&quot;,&quot;iced&quot;],k:c,i:/\/\*/,c:i.concat([e.C(&quot;###&quot;,&quot;###&quot;),e.HCM,{cN:&quot;function&quot;,b:&quot;^\\s*&quot;+n+&quot;\\s*=\\s*&quot;+t,e:&quot;[-=]&gt;&quot;,rB:!0,c:[s,o]},{b:/[:\(,=]\s*/,r:0,c:[{cN:&quot;function&quot;,b:t,e:&quot;[-=]&gt;&quot;,rB:!0,c:[o]}]},{cN:&quot;class&quot;,bK:&quot;class&quot;,e:&quot;$&quot;,i:/[:=&quot;\[\]]/,c:[{bK:&quot;extends&quot;,eW:!0,i:/[:=&quot;\[\]]/,c:[s]},s]},{b:n+&quot;:&quot;,e:&quot;:&quot;,rB:!0,rE:!0,r:0}])}});hljs.registerLanguage(&quot;php&quot;,function(e){var c={b:&quot;\\$+[a-zA-Z_-ÿ][a-zA-Z0-9_-ÿ]*&quot;},i={cN:&quot;meta&quot;,b:/&lt;\?(php)?|\?&gt;/},t={cN:&quot;string&quot;,c:[e.BE,i],v:[{b:'b&quot;',e:'&quot;'},{b:&quot;b'&quot;,e:&quot;'&quot;},e.inherit(e.ASM,{i:null}),e.inherit(e.QSM,{i:null})]},a={v:[e.BNM,e.CNM]};return{aliases:[&quot;php&quot;,&quot;php3&quot;,&quot;php4&quot;,&quot;php5&quot;,&quot;php6&quot;,&quot;php7&quot;],cI:!0,k:&quot;and include_once list abstract global private echo interface as static endswitch array null if endwhile or const for endforeach self var while isset public protected exit foreach throw elseif include __FILE__ empty require_once do xor return parent clone use __CLASS__ __LINE__ else break print eval new catch __METHOD__ case exception default die require __FUNCTION__ enddeclare final try switch continue endfor endif declare unset true false trait goto instanceof insteadof __DIR__ __NAMESPACE__ yield finally&quot;,c:[e.HCM,e.C(&quot;//&quot;,&quot;$&quot;,{c:[i]}),e.C(&quot;/\\*&quot;,&quot;\\*/&quot;,{c:[{cN:&quot;doctag&quot;,b:&quot;@[A-Za-z]+&quot;}]}),e.C(&quot;__halt_compiler.+?;&quot;,!1,{eW:!0,k:&quot;__halt_compiler&quot;,l:e.UIR}),{cN:&quot;string&quot;,b:/&lt;&lt;&lt;['&quot;]?\w+['&quot;]?$/,e:/^\w+;?$/,c:[e.BE,{cN:&quot;subst&quot;,v:[{b:/\$\w+/},{b:/\{\$/,e:/\}/}]}]},i,{cN:&quot;keyword&quot;,b:/\$this\b/},c,{b:/(::|-&gt;)+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/},{cN:&quot;function&quot;,bK:&quot;function&quot;,e:/[;{]/,eE:!0,i:&quot;\\$|\\[|%&quot;,c:[e.UTM,{cN:&quot;params&quot;,b:&quot;\\(&quot;,e:&quot;\\)&quot;,c:[&quot;self&quot;,c,e.CBCM,t,a]}]},{cN:&quot;class&quot;,bK:&quot;class interface&quot;,e:&quot;{&quot;,eE:!0,i:/[:\(\$&quot;]/,c:[{bK:&quot;extends implements&quot;},e.UTM]},{bK:&quot;namespace&quot;,e:&quot;;&quot;,i:/[\.']/,c:[e.UTM]},{bK:&quot;use&quot;,e:&quot;;&quot;,c:[e.UTM]},{b:&quot;=&gt;&quot;},t,a]}});hljs.registerLanguage(&quot;cpp&quot;,function(t){var e={cN:&quot;keyword&quot;,b:&quot;\\b[a-z\\d_]*_t\\b&quot;},r={cN:&quot;string&quot;,v:[{b:'(u8?|U|L)?&quot;',e:'&quot;',i:&quot;\\n&quot;,c:[t.BE]},{b:'(u8?|U|L)?R&quot;\\(',e:'\\)&quot;'},{b:&quot;'\\\\?.&quot;,e:&quot;'&quot;,i:&quot;.&quot;}]},s={cN:&quot;number&quot;,v:[{b:&quot;\\b(0b[01']+)&quot;},{b:&quot;(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)&quot;},{b:&quot;(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)&quot;}],r:0},i={cN:&quot;meta&quot;,b:/#\s*[a-z]+\b/,e:/$/,k:{&quot;meta-keyword&quot;:&quot;if else elif endif define undef warning error line pragma ifdef ifndef include&quot;},c:[{b:/\\\n/,r:0},t.inherit(r,{cN:&quot;meta-string&quot;}),{cN:&quot;meta-string&quot;,b:/&lt;[^\n&gt;]*&gt;/,e:/$/,i:&quot;\\n&quot;},t.CLCM,t.CBCM]},a=t.IR+&quot;\\s*\\(&quot;,c={keyword:&quot;int float while private char catch import module export virtual operator sizeof dynamic_cast|10 typedef const_cast|10 const for static_cast|10 union namespace unsigned long volatile static protected bool template mutable if public friend do goto auto void enum else break extern using asm case typeid short reinterpret_cast|10 default double register explicit signed typename try this switch continue inline delete alignof constexpr decltype noexcept static_assert thread_local restrict _Bool complex _Complex _Imaginary atomic_bool atomic_char atomic_schar atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong atomic_ullong new throw return and or not&quot;,built_in:&quot;std string cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap array shared_ptr abort abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr&quot;,literal:&quot;true false nullptr NULL&quot;},n=[e,t.CLCM,t.CBCM,s,r];return{aliases:[&quot;c&quot;,&quot;cc&quot;,&quot;h&quot;,&quot;c++&quot;,&quot;h++&quot;,&quot;hpp&quot;],k:c,i:&quot;&lt;/&quot;,c:n.concat([i,{b:&quot;\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*&lt;&quot;,e:&quot;&gt;&quot;,k:c,c:[&quot;self&quot;,e]},{b:t.IR+&quot;::&quot;,k:c},{v:[{b:/=/,e:/;/},{b:/\(/,e:/\)/},{bK:&quot;new throw return else&quot;,e:/;/}],k:c,c:n.concat([{b:/\(/,e:/\)/,k:c,c:n.concat([&quot;self&quot;]),r:0}]),r:0},{cN:&quot;function&quot;,b:&quot;(&quot;+t.IR+&quot;[\\*&amp;\\s]+)+&quot;+a,rB:!0,e:/[{;=]/,eE:!0,k:c,i:/[^\w\s\*&amp;]/,c:[{b:a,rB:!0,c:[t.TM],r:0},{cN:&quot;params&quot;,b:/\(/,e:/\)/,k:c,r:0,c:[t.CLCM,t.CBCM,r,s,e,{b:/\(/,e:/\)/,k:c,r:0,c:[&quot;self&quot;,t.CLCM,t.CBCM,r,s,e]}]},t.CLCM,t.CBCM,i]},{cN:&quot;class&quot;,bK:&quot;class struct&quot;,e:/[{;:]/,c:[{b:/&lt;/,e:/&gt;/,c:[&quot;self&quot;]},t.TM]}]),exports:{preprocessor:i,strings:r,k:c}}});hljs.registerLanguage(&quot;properties&quot;,function(r){var t=&quot;[ \\t\\f]*&quot;,e=&quot;[ \\t\\f]+&quot;,s=&quot;(&quot;+t+&quot;[:=]&quot;+t+&quot;|&quot;+e+&quot;)&quot;,n=&quot;([^\\\\\\W:= \\t\\f\\n]|\\\\.)+&quot;,a=&quot;([^\\\\:= \\t\\f\\n]|\\\\.)+&quot;,c={e:s,r:0,starts:{cN:&quot;string&quot;,e:/$/,r:0,c:[{b:&quot;\\\\\\n&quot;}]}};return{cI:!0,i:/\S/,c:[r.C(&quot;^\\s*[!#]&quot;,&quot;$&quot;),{b:n+s,rB:!0,c:[{cN:&quot;attr&quot;,b:n,endsParent:!0,r:0}],starts:c},{b:a+s,rB:!0,r:0,c:[{cN:&quot;meta&quot;,b:a,endsParent:!0,r:0}],starts:c},{cN:&quot;attr&quot;,r:0,b:a+t+&quot;$&quot;}]}});hljs.registerLanguage(&quot;diff&quot;,function(e){return{aliases:[&quot;patch&quot;],c:[{cN:&quot;meta&quot;,r:10,v:[{b:/^@@ +\-\d+,\d+ +\+\d+,\d+ +@@$/},{b:/^\*\*\* +\d+,\d+ +\*\*\*\*$/},{b:/^\-\-\- +\d+,\d+ +\-\-\-\-$/}]},{cN:&quot;comment&quot;,v:[{b:/Index: /,e:/$/},{b:/={3,}/,e:/$/},{b:/^\-{3}/,e:/$/},{b:/^\*{3} /,e:/$/},{b:/^\+{3}/,e:/$/},{b:/\*{5}/,e:/\*{5}$/}]},{cN:&quot;addition&quot;,b:&quot;^\\+&quot;,e:&quot;$&quot;},{cN:&quot;deletion&quot;,b:&quot;^\\-&quot;,e:&quot;$&quot;},{cN:&quot;addition&quot;,b:&quot;^\\!&quot;,e:&quot;$&quot;}]}});hljs.registerLanguage(&quot;apache&quot;,function(e){var r={cN:&quot;number&quot;,b:&quot;[\\$%]\\d+&quot;};return{aliases:[&quot;apacheconf&quot;],cI:!0,c:[e.HCM,{cN:&quot;section&quot;,b:&quot;&lt;/?&quot;,e:&quot;&gt;&quot;},{cN:&quot;attribute&quot;,b:/\w+/,r:0,k:{nomarkup:&quot;order deny allow setenv rewriterule rewriteengine rewritecond documentroot sethandler errordocument loadmodule options header listen serverroot servername&quot;},starts:{e:/$/,r:0,k:{literal:&quot;on off all&quot;},c:[{cN:&quot;meta&quot;,b:&quot;\\s\\[&quot;,e:&quot;\\]$&quot;},{cN:&quot;variable&quot;,b:&quot;[\\$%]\\{&quot;,e:&quot;\\}&quot;,c:[&quot;self&quot;,r]},r,e.QSM]}}],i:/\S/}});hljs.registerLanguage(&quot;tex&quot;,function(c){var e={cN:&quot;tag&quot;,b:/\\/,r:0,c:[{cN:&quot;name&quot;,v:[{b:/[a-zA-Zа-яА-я]+[*]?/},{b:/[^a-zA-Zа-яА-я0-9]/}],starts:{eW:!0,r:0,c:[{cN:&quot;string&quot;,v:[{b:/\[/,e:/\]/},{b:/\{/,e:/\}/}]},{b:/\s*=\s*/,eW:!0,r:0,c:[{cN:&quot;number&quot;,b:/-?\d*\.?\d+(pt|pc|mm|cm|in|dd|cc|ex|em)?/}]}]}}]};return{c:[e,{cN:&quot;formula&quot;,c:[e],r:0,v:[{b:/\$\$/,e:/\$\$/},{b:/\$/,e:/\$/}]},c.C(&quot;%&quot;,&quot;$&quot;,{r:0})]}});hljs.registerLanguage(&quot;cmake&quot;,function(e){return{aliases:[&quot;cmake.in&quot;],cI:!0,k:{keyword:&quot;break cmake_host_system_information cmake_minimum_required cmake_parse_arguments cmake_policy configure_file continue elseif else endforeach endfunction endif endmacro endwhile execute_process file find_file find_library find_package find_path find_program foreach function get_cmake_property get_directory_property get_filename_component get_property if include include_guard list macro mark_as_advanced math message option return separate_arguments set_directory_properties set_property set site_name string unset variable_watch while add_compile_definitions add_compile_options add_custom_command add_custom_target add_definitions add_dependencies add_executable add_library add_link_options add_subdirectory add_test aux_source_directory build_command create_test_sourcelist define_property enable_language enable_testing export fltk_wrap_ui get_source_file_property get_target_property get_test_property include_directories include_external_msproject include_regular_expression install link_directories link_libraries load_cache project qt_wrap_cpp qt_wrap_ui remove_definitions set_source_files_properties set_target_properties set_tests_properties source_group target_compile_definitions target_compile_features target_compile_options target_include_directories target_link_directories target_link_libraries target_link_options target_sources try_compile try_run ctest_build ctest_configure ctest_coverage ctest_empty_binary_directory ctest_memcheck ctest_read_custom_files ctest_run_script ctest_sleep ctest_start ctest_submit ctest_test ctest_update ctest_upload build_name exec_program export_library_dependencies install_files install_programs install_targets load_command make_directory output_required_files remove subdir_depends subdirs use_mangled_mesa utility_source variable_requires write_file qt5_use_modules qt5_use_package qt5_wrap_cpp on off true false and or not command policy target test exists is_newer_than is_directory is_symlink is_absolute matches less greater equal less_equal greater_equal strless strgreater strequal strless_equal strgreater_equal version_less version_greater version_equal version_less_equal version_greater_equal in_list defined&quot;},c:[{cN:&quot;variable&quot;,b:&quot;\\${&quot;,e:&quot;}&quot;},e.HCM,e.QSM,e.NM]}});hljs.registerLanguage(&quot;python&quot;,function(e){var r={keyword:&quot;and elif is global as in if from raise for except finally print import pass return exec else break not with class assert yield try while continue del or def lambda async await nonlocal|10 None True False&quot;,built_in:&quot;Ellipsis NotImplemented&quot;},b={cN:&quot;meta&quot;,b:/^(&gt;&gt;&gt;|\.\.\.) /},c={cN:&quot;subst&quot;,b:/\{/,e:/\}/,k:r,i:/#/},a={cN:&quot;string&quot;,c:[e.BE],v:[{b:/(u|b)?r?'''/,e:/'''/,c:[e.BE,b],r:10},{b:/(u|b)?r?&quot;&quot;&quot;/,e:/&quot;&quot;&quot;/,c:[e.BE,b],r:10},{b:/(fr|rf|f)'''/,e:/'''/,c:[e.BE,b,c]},{b:/(fr|rf|f)&quot;&quot;&quot;/,e:/&quot;&quot;&quot;/,c:[e.BE,b,c]},{b:/(u|r|ur)'/,e:/'/,r:10},{b:/(u|r|ur)&quot;/,e:/&quot;/,r:10},{b:/(b|br)'/,e:/'/},{b:/(b|br)&quot;/,e:/&quot;/},{b:/(fr|rf|f)'/,e:/'/,c:[e.BE,c]},{b:/(fr|rf|f)&quot;/,e:/&quot;/,c:[e.BE,c]},e.ASM,e.QSM]},s={cN:&quot;number&quot;,r:0,v:[{b:e.BNR+&quot;[lLjJ]?&quot;},{b:&quot;\\b(0o[0-7]+)[lLjJ]?&quot;},{b:e.CNR+&quot;[lLjJ]?&quot;}]},i={cN:&quot;params&quot;,b:/\(/,e:/\)/,c:[&quot;self&quot;,b,s,a]};return c.c=[a,s,b],{aliases:[&quot;py&quot;,&quot;gyp&quot;],k:r,i:/(&lt;\/|-&gt;|\?)|=&gt;/,c:[b,s,a,e.HCM,{v:[{cN:&quot;function&quot;,bK:&quot;def&quot;},{cN:&quot;class&quot;,bK:&quot;class&quot;}],e:/:/,i:/[${=;\n,]/,c:[e.UTM,i,{b:/-&gt;/,eW:!0,k:&quot;None&quot;}]},{cN:&quot;meta&quot;,b:/^[\t ]*@/,e:/$/},{b:/\b(print|exec)\(/}]}});
 exports.hljs = hljs;</pre>
 </div>
-<div author="TonGerner" core-version="&gt;=5.1.13" created="20170511203457093" creator="TonGerner" description="Timestamp button" list="readme" modified="20170726075452673" modifier="TonGerner" plugin-type="plugin" title="$:/plugins/tongerner/timestamp-button" type="application/json" version="0.0.10">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/core/images/timestamp&quot;: {
-            &quot;created&quot;: &quot;20161204161241276&quot;,
-            &quot;text&quot;: &quot;&lt;svg class=\&quot;tgc-timestamp tc-image-button\&quot;height=\&quot;20pt\&quot; width=\&quot;20pt\&quot; viewBox=\&quot;0 0 20 20\&quot;&gt;&lt;path d=\&quot;M10,0 C4.5,0 0,4.5 0,10 C0,15.5 4.5,20 10,20 C15.5,20 20,15.5 20,10 C20,4.5 15.5,0 10,0 L10,0 Z M10,18 C5.6,18 2,14.4 2,10 C2,5.6 5.6,2 10,2 C14.4,2 18,5.6 18,10 C18,14.4 14.4,18 10,18 Z M10.5,5 L9,5 L9,11 L14.2,14.2 L15,12.9 L10.5,10.2 L10.5,5 Z\&quot;&gt;&lt;/svg&gt;&quot;,
-            &quot;title&quot;: &quot;$:/core/images/timestamp&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Image&quot;,
-            &quot;modifier&quot;: &quot;TonGerner&quot;,
-            &quot;modified&quot;: &quot;20170726075430605&quot;,
-            &quot;creator&quot;: &quot;TonGerner&quot;
-        },
-        &quot;$:/core/ui/EditorToolbar/timestamp&quot;: {
-            &quot;created&quot;: &quot;20161118171456554&quot;,
-            &quot;text&quot;: &quot;&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;replace-selection\&quot;\n\ttext=&lt;&lt;now&gt;&gt;\n/&gt;&quot;,
-            &quot;title&quot;: &quot;$:/core/ui/EditorToolbar/timestamp&quot;,
-            &quot;tags&quot;: &quot;$:/tags/EditorToolbar&quot;,
-            &quot;shortcuts&quot;: &quot;((timestamp))&quot;,
-            &quot;modifier&quot;: &quot;TonGerner&quot;,
-            &quot;modified&quot;: &quot;20170726074415991&quot;,
-            &quot;icon&quot;: &quot;$:/core/images/timestamp&quot;,
-            &quot;description&quot;: &quot;{{$:/language/Buttons/TimeStamp/Hint}}&quot;,
-            &quot;creator&quot;: &quot;TonGerner&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]&quot;,
-            &quot;caption&quot;: &quot;{{$:/language/Buttons/TimeStamp/Caption}}&quot;
-        },
-        &quot;$:/language/Buttons/TimeStamp/Caption&quot;: {
-            &quot;text&quot;: &quot;insert timestamp&quot;,
-            &quot;title&quot;: &quot;$:/language/Buttons/TimeStamp/Caption&quot;,
-            &quot;modifier&quot;: &quot;TonGerner&quot;,
-            &quot;modified&quot;: &quot;20170409182351950&quot;,
-            &quot;creator&quot;: &quot;TonGerner&quot;,
-            &quot;created&quot;: &quot;20170409182341874&quot;
-        },
-        &quot;$:/language/Buttons/TimeStamp/Hint&quot;: {
-            &quot;text&quot;: &quot;Insert timestamp&quot;,
-            &quot;title&quot;: &quot;$:/language/Buttons/TimeStamp/Hint&quot;,
-            &quot;modifier&quot;: &quot;TonGerner&quot;,
-            &quot;modified&quot;: &quot;20170409182417864&quot;,
-            &quot;creator&quot;: &quot;TonGerner&quot;,
-            &quot;created&quot;: &quot;20170409182409954&quot;
-        },
-        &quot;$:/config/ShortcutInfo/timestamp&quot;: {
-            &quot;created&quot;: &quot;20161204162358226&quot;,
-            &quot;text&quot;: &quot;{{$:/language/Buttons/TimeStamp/Hint}}&quot;,
-            &quot;title&quot;: &quot;$:/config/ShortcutInfo/timestamp&quot;,
-            &quot;modifier&quot;: &quot;TonGerner&quot;,
-            &quot;modified&quot;: &quot;20171030143250967&quot;,
-            &quot;creator&quot;: &quot;TonGerner&quot;
-        },
-        &quot;$:/config/shortcuts/timestamp&quot;: {
-            &quot;text&quot;: &quot;ctrl+D&quot;,
-            &quot;title&quot;: &quot;$:/config/shortcuts/timestamp&quot;,
-            &quot;modified&quot;: &quot;20161204165605507&quot;,
-            &quot;created&quot;: &quot;20161204162542451&quot;
-        },
-        &quot;$:/plugins/tongerner/timestamp-button/readme&quot;: {
-            &quot;created&quot;: &quot;20170511200701782&quot;,
-            &quot;text&quot;: &quot;A button ({{$:/core/images/timestamp}}) for the Editor toolbar that inserts a timestamp.&lt;br&gt;Adapt the date/time format - `&lt;&lt;now [format]&gt;&gt;` in $:/core/ui/EditorToolbar/timestamp - to your liking.&lt;br&gt;\nAssigned shortcut: {{$:/config/shortcuts/timestamp}}\n\n\n\n&quot;,
-            &quot;title&quot;: &quot;$:/plugins/tongerner/timestamp-button/readme&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modifier&quot;: &quot;TonGerner&quot;,
-            &quot;modified&quot;: &quot;20170801191143597&quot;,
-            &quot;creator&quot;: &quot;TonGerner&quot;
-        }
-    }
-}</pre>
-</div>
 <div author="Mario Pietsch" core-version="&gt;=5.1.6" dependents="" description="Internal links are added to tabs if selected" list="readme license" plugin-type="plugin" title="$:/plugins/wikilabs/link-to-tabs" type="application/json" version="0.1.1">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -10557,53 +10493,59 @@ exports.hljs = hljs;</pre>
     }
 }</pre>
 </div>
-<div created="20190316192138590" creator="Mohammad" modified="20190316192148314" modifier="Mohammad" title="$:/SiteSubtitle">
+<div created="20190322165224260" creator="Mohammad" modified="20190322165224260" modifier="Mohammad" title="$:/SiteSubtitle">
 <pre>a collection of simple small macros</pre>
 </div>
-<div created="20190316192125136" creator="Mohammad" modified="20190316192134648" modifier="Mohammad" title="$:/SiteTitle">
+<div created="20190322165226198" creator="Mohammad" modified="20190322203858680" modifier="Mohammad" title="$:/SiteTitle">
 <pre>Yazd</pre>
 </div>
-<div created="20190316211423620" creator="Mohammad" modified="20190316211423620" modifier="Mohammad" title="$:/state/plugin-info--896887961-$:/plugins/tongerner/timestamp-button">
+<div created="20190322195518976" creator="Mohammad" modified="20190322220005566" modifier="Mohammad" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20190316200958477" creator="Mohammad" modified="20190321190600782" modifier="Mohammad" title="$:/state/showeditpreview">
+<div created="20190322195514817" creator="Mohammad" modified="20190322221100634" modifier="Mohammad" title="$:/state/sidebar">
+<pre>yes</pre>
+</div>
+<div created="20190322215346831" creator="Mohammad" modified="20190322215350919" modifier="Mohammad" title="$:/state/slider-macro/macro/linkto/Code-310788987">
 <pre>no</pre>
 </div>
-<div created="20190316215035903" creator="Mohammad" modified="20190321191826981" modifier="Mohammad" title="$:/state/sidebar">
+<div created="20190322213939164" creator="Mohammad" modified="20190322213939931" modifier="Mohammad" title="$:/state/slider-macro/macro/slider-macro/Code--49026255">
+<pre>no</pre>
+</div>
+<div created="20190322213937330" creator="Mohammad" modified="20190322213938116" modifier="Mohammad" title="$:/state/slider-macro/macro/slider-macro/My Label--49026255">
+<pre>no</pre>
+</div>
+<div created="20190322215338743" creator="Mohammad" modified="20190322215338743" modifier="Mohammad" title="$:/state/slider-macro/macro/vspace/Code--454726639">
 <pre>yes</pre>
 </div>
-<div created="20190316204403215" creator="Mohammad" modified="20190316204417329" modifier="Mohammad" title="$:/state/tab--1094306612">
-<pre>$:/core/ui/TiddlerInfo/Tools</pre>
-</div>
-<div created="20190317180343873" creator="Mohammad" modified="20190320082613871" modifier="Mohammad" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20190322202852740" creator="Mohammad" modified="20190322202852740" modifier="Mohammad" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
 <div created="20190316152334149" modified="20190316152334149" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
-<div created="20190321161021789" creator="Mohammad" modified="20190321161021789" modifier="Mohammad" title="$:/state/tab--2028231098">
-<pre>$:/core/ui/TiddlerInfo/Tools</pre>
-</div>
 <div created="20190316152415466" creator="Mohammad" modified="20190316152415466" modifier="Mohammad" title="$:/state/tab--697582678">
 <pre>$:/core/ui/ControlPanel/Settings/CodeMirror</pre>
 </div>
-<div created="20190316152331950" creator="Mohammad" modified="20190316223204079" modifier="Mohammad" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20190322165122623" creator="Mohammad" modified="20190322165122623" modifier="Mohammad" title="$:/state/tab-1295690639">
+<pre>$:/core/ui/TiddlerInfo/Tools</pre>
 </div>
-<div created="20190316152434353" creator="Mohammad" modified="20190321161119966" modifier="Mohammad" title="$:/state/tab/sidebar--595412856">
-<pre>List of Macros</pre>
+<div created="20190316152331950" creator="Mohammad" modified="20190322203854810" modifier="Mohammad" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div created="20190321192310629" creator="Mohammad" modified="20190321192347013" modifier="Mohammad" title="$:/state/toggle-view-fields">
+<div created="20190316152434353" creator="Mohammad" modified="20190322222620110" modifier="Mohammad" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
+</div>
+<div created="20190322165018268" creator="Mohammad" modified="20190322212504711" modifier="Mohammad" title="$:/state/toggle-view-fields">
 <pre>hide</pre>
 </div>
 <div created="20190316152341816" creator="M" modified="20190316152343264" modifier="Mohamma" title="$:/status/UserName">
 <pre>Mohammad</pre>
 </div>
-<div list="[[Macro Summary]]" title="$:/StoryList">
+<div list="Home [[Change Log]] [[Coding Practice]] [[Authors and Contributors]] [[Macro Summary]]" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20190316204855127" creator="Mohammad" modified="20190321161058766" modifier="Mohammad" title="$:/temp/advancedsearch">
-<pre>macro/</pre>
+<div created="20190322202854533" creator="Mohammad" modified="20190322213903996" modifier="Mohammad" title="$:/temp/advancedsearch">
+<pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -10663,7 +10605,7 @@ exports.hljs = hljs;</pre>
     }
 }</pre>
 </div>
-<div created="20190316204843824" creator="Mohammad" modified="20190321161932945" modifier="Mohammad" title="$:/temp/search">
+<div created="20190322201340168" creator="Mohammad" modified="20190322221856568" modifier="Mohammad" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.20-prerelease">
@@ -10775,23 +10717,37 @@ exports.hljs = hljs;</pre>
     }
 }</pre>
 </div>
-<div created="20190316152336186" creator="Mohammad" modified="20190316223206513" modifier="Mohammad" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
+<div created="20190316152336186" modified="20190316152336186" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20190316192911918" creator="Mohammad" modified="20190317174233620" modifier="Mohammad" tags="start" title="Authors and Contributors">
-<pre>!! Authors
-These are people directly and interactively contribute to Yazd project
-
+<div created="20190322222231647" creator="Mohammad" modified="20190322222455543" modifier="Mohammad" tags="change" title="23rd March 2019">
+<pre>* Release 0.2
+** New documentation style
+** added several new macros</pre>
+</div>
+<div created="20190316192911918" creator="Mohammad" modified="20190322221613617" modifier="Mohammad" tags="start" title="Authors and Contributors">
+<pre>!! Author
 * Mohammad Rahmani
 
 !! Contributors
-These are people did not directly contribute, but their codes are used in Yazd project.
+These are people directly or indirectly contribute. By indirect contribution, it means the macros developed by these people were collected from forums or their published wiki.
 
-* Jeremy Ruston
-* Tobias Beer
-* Eric Shulman</pre>
+&lt;&lt;list-authors&gt;&gt;
+</pre>
 </div>
-<div created="20190316193225560" creator="Mohammad" modified="20190321191822759" modifier="Mohammad" tags="start" title="Coding Practice">
+<div created="20190212144737901" creator="Mohammad" modified="20190314143340805" modifier="Mohammad" title="Change Log">
+<pre>''Changes''
+&lt;&lt;article change&gt;&gt;
+</pre>
+</div>
+<div created="20181223191617706" creator="Mohammad" modified="20190117122145253" modifier="Mohammad" tags="$:/tags/Stylesheet" title="CodeMirror/Firefox-Setting" type="text/css">
+<pre>/*Adjust the font of Codemirror on FF browser*/
+.CodeMirror {
+font-family: Consolas, monospace;
+font-size: 15px;
+}</pre>
+</div>
+<div created="20190316193225560" creator="Mohammad" modified="20190322215821447" modifier="Mohammad" tags="start" title="Coding Practice">
 <pre>How to create and document a macro in Yazd collection?
 
 !! Start 
@@ -10831,30 +10787,39 @@ These are people did not directly contribute, but their codes are used in Yazd p
 ** ''url'' [optional]: the possible page 
 &lt;&lt;&lt;
 
-!! Stylesheet and Viewtemplate
+!! Stylesheet, Viewtemplate, and data tiddler
 &lt;&lt;&lt;
-* a macro can have dedicated CSS. These css are stored in a tiddler as below
+* a macro can have associated CSS. These css are stored in a tiddler as below
 ** tiddler name `stalysheet/macro-name`
 ** tagged with `$:/tags/Stylesheet` and `yazd`
-* a macro can have dedicated viewtemplate. It is stored in a tiddler as below
+* a macro can have an associated viewtemplate. It is stored in a tiddler as below
 ** tiddler name `viewtemplate/macro-name`
 ** tagged with `$:/tags/Viewtemplate` and `yazd`
+* a macro can have an associated data tiddler. It is stored in a tiddler as below
+** tiddler name `data/macro-name`
+** tagged with `yazd`
 &lt;&lt;&lt;
 !! Documentation
 * documention is placed inside the macro tiddler, after macro definition
 * a template has been provided, fllow it
 * in calling macro use named parameters
 ** example: `&lt;&lt;mymacro p1:&quot;hello&quot;&gt;&gt;`
+* when refering to macro name, use bold face like ''macro-name''
+* when refering to macro parameter, use italic face like //par1//
 
 !! Extra examples
 &lt;&lt;&lt;
-* for more examples create a tiddler named `doc/macro-name`
+* for more examples 
+** create a tiddler named `demo/macro-name`
+** tag it with `yazd`
 * follow the same instruction for documentation as described in the macro definition template
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20190316192203374" creator="Mohammad" modified="20190317184936426" modifier="Mohammad" tags="start" title="Home">
-<pre>! Yazd
-''Yazd'' is a KISS collection of Tiddlywiki macros. These are macros their script is less than 20 lines and simple in concept, modular and easy to use.
+<div created="20190316192203374" creator="Mohammad" modified="20190322205457307" modifier="Mohammad" tags="start" title="Home">
+<pre>[img class=&quot;float-right&quot; width=64px [$:/favicon.ico]]
+
+! Yazd
+[[Yazd]] is a KISS collection of Tiddlywiki macros. These are macros their script is less than 20 lines and simple in concept, modular and easy to use.
 
 
 &lt;&lt;&lt; [[KISS principle|https://en.wikipedia.org/wiki/KISS_principle]]
@@ -10868,20 +10833,12 @@ More information
 * [[How Yazd works?|Yazd Mechanism]]
 * [[How create and document macros|Coding Practice]]</pre>
 </div>
-<div created="20190320082306204" creator="Mohammad" modified="20190320082532242" modifier="Mohammad" tags="idea" title="Idea on Wrtting Macro">
-<pre>```
-\define mac-name(par1:&quot;&quot;, par2:&quot;&quot;)
-&lt;!--MAC-NAME describe what it do&gt;
-...body
-\end
-```</pre>
-</div>
-<div created="20190316194941957" creator="Mohammad" modified="20190321164032664" modifier="Mohammad" tags="$:/tags/SideBar" title="List of Macros">
+<div created="20190316194941957" creator="Mohammad" modified="20190322214058982" modifier="Mohammad" tags="$:/tags/SideBar" title="List of Macros">
 <pre>&lt;$button&gt;New macro
 &lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; $param=&quot;$:/def/macro-template&quot; title=&quot;macro/&quot;/&gt;
 &lt;/$button&gt;
 
-&lt;&lt;olist &quot;[tag[yazd]] -[[$:/def/macro-template]] -[has[draft.of]] +[sort[title]]&quot; class:&quot;alert-warning&quot; prefix:&quot;macro/&quot;&gt;&gt;</pre>
+&lt;&lt;olist &quot;[tag[$:/tags/Macro]tag[yazd]] -[[$:/def/macro-template]] -[has[draft.of]] +[sort[title]]&quot; class:&quot;alert-warning&quot; prefix:&quot;macro/&quot;&gt;&gt;</pre>
 </div>
 <div created="20190316220541248" creator="Mohammad" modified="20190321193039532" modifier="Mohammad" tags="start" title="Macro Summary">
 <pre>&lt;$list filter=&quot;[tag[$:/tags/Macro]tag[yazd]!is[system]!has[draft.of]]&quot;&gt;
@@ -10893,7 +10850,7 @@ More information
 &lt;/$list&gt;
 </pre>
 </div>
-<div author="Jeremy Ruston" created="20190316214433792" creator="Mohammad" description="creates few paragraphs of dumy text" modified="20190321191957029" modifier="Mohammad" syntax="&lt;&lt;.lorem np:1&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/.lorem">
+<div author="Jeremy Ruston" created="20190316214433792" creator="Mohammad" description="creates few paragraphs of dumy text" modified="20190322221706106" modifier="Mohammad" syntax="&lt;&lt;.lorem np:1&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/.lorem">
 <pre>\define .lorem(np:1)
 &lt;$list filter=&quot;[range[1,$np$]]&quot; variable=null&gt;
 
@@ -10902,14 +10859,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 &lt;/$list&gt;
 \end
 
-!! Macro
-&lt;&lt;&lt;
-&lt;&lt;show-macro&gt;&gt;
-&lt;&lt;&lt;
-
 !! Purpose
 &lt;&lt;&lt;
-creates few paragraphs of dumy text
+//.lorem// creates few paragraphs of dumy text
 &lt;&lt;&lt;
 
 !! Syntax
@@ -10918,31 +10870,124 @@ creates few paragraphs of dumy text
 &lt;&lt;.lorem np:1&gt;&gt;
 ```
 
-!! Content and attributes
-|!Attributes |!Type |!Description |
+!! Content and parameters
+|Parameter |Type |Description |h
 |np |optional |number of paragraphs, defualt is 1 |
 &lt;&lt;&lt;
 
-!! Example
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
 &lt;&lt;&lt;
-A two paragraph dummy text.
-&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
-src=&quot;&quot;&quot;&lt;&lt;.lorem np:2&gt;&gt;
-&quot;&quot;&quot;/&gt;
+&lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;
 
 !! Revisions
 &lt;&lt;&lt;
 ;Rev 0.1
-:17th Mar 2019 01:49:43
+:2019-03-17, basic version
 &lt;&lt;&lt;
 
-!! References
+!! Reference
 &lt;&lt;&lt;
+# [ext[Yazd|https://tw-scripts.github.io/Yazd/]]
 # https://www.blindtextgenerator.com/lorem-ipsum
-&lt;&lt;&lt;</pre>
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+
+
+
+!! Examples
+&lt;&lt;&lt;
+Two paragraphs dummy text.
+&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
+src=&quot;&quot;&quot;&lt;&lt;.lorem np:2&gt;&gt;
+&quot;&quot;&quot;/&gt;
+&lt;&lt;&lt;
+</pre>
 </div>
-<div created="20181213121411187" creator="Mohammad" modified="20190321082719300" modifier="Mohammad" tags="find-macro $:/tags/Macro" title="macro/find">
+<div created="20190214180230680" creator="Mohammad" modified="20190322222353032" modifier="Mohammad" tags="$:/tags/Macro" title="macro/article">
+<pre>\define article(myTag)
+&lt;$list filter=&quot;[tag[$myTag$]!sort[modified]]&quot;&gt;
+
+&lt;h3&gt;&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt; /&gt;&lt;/$link&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+
+&lt;$transclude/&gt;
+
+&lt;/blockquote&gt;
+&lt;/$list&gt;
+\end
+
+\define docit()
+&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;To Be Docummented &lt;/span&gt;
+\end
+
+!!Description
+;article
+:populates tiddlers based on tag to create an article
+;docit
+: creats a read colored paragraph witha message: To be documented</pre>
+</div>
+<div author="Birthe C" created="20190322170728496" creator="Mohammad" description="display the color name and its code in a colored rectangle" modified="20190322221714794" modifier="Mohammad" syntax="macro calling syntax..." tags="yazd $:/tags/Macro" title="macro/colorcode" url="http://showroom.tiddlyspot.com/#%24%3A%2Fthemes%2FBirthe%2Fshowroom%2FColourExamples">
+<pre>\define colorcode(name, code:&quot;&quot;, width:&quot;50%&quot;)
+&lt;div style=&quot;background-color:$name$;border-radius: 5px;padding: 9px 12px 10px;margin:1em;width:$width$;&quot;&gt;
+`$code$` &lt;$text text=$name$ /&gt;
+&lt;/div&gt;
+\end
+
+!! Purpose
+&lt;&lt;&lt;
+//colorcode// visually displays the name and code of a valid HTML color.
+&lt;&lt;&lt;
+
+!! Syntax
+&lt;&lt;&lt;
+```
+&lt;&lt;colorcode code color width:&quot;50%&quot;&gt;&gt;
+```
+
+!! Content and parameters
+|Parameter |Type |Description |h
+|name  |required|a valid HTML color name |
+|code  |optional|a valid HTML color code, hex, rgb, or hsl. Default is empty |
+|width |optional|the width of colored div. Default is 50% |
+
+The //colorcode// works with valid color name and gets the color code to display them in a colored rectangle!
+&lt;&lt;&lt;
+
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
+&lt;&lt;&lt;
+&lt;&lt;show-macro&gt;&gt;
+&lt;&lt;&lt;
+
+!! Revisions
+&lt;&lt;&lt;
+;Rev 0.1
+:2019-03-23, basic version
+&lt;&lt;&lt;
+
+!! Reference
+&lt;&lt;&lt;
+# [ext[Yazd|https://tw-scripts.github.io/Yazd/]]
+# [[Web colors|https://en.wikipedia.org/wiki/Web_colors]]
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+!! Examples
+&lt;&lt;&lt;
+The below examples show several colors.
+
+&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
+src=&quot;&quot;&quot;&lt;&lt;colorcode code:&quot;#FFF0F5&quot; name:&quot;LavenderBlush&quot;&gt;&gt;
+&lt;&lt;colorcode code:&quot;#B0E0E6&quot; name:&quot;PowderBlue&quot;&gt;&gt;
+&lt;&lt;colorcode code:&quot;rgb(255,255,0)&quot; name:&quot;yellow&quot;&gt;&gt;
+&quot;&quot;&quot;/&gt;
+
+&lt;&lt;&lt;
+</pre>
+</div>
+<div created="20181213121411187" creator="Mohammad" modified="20190322165619327" modifier="Mohammad" tags="find-macro $:/tags/Macro" title="macro/find">
 <pre>\define find(text, begin, end, output:&quot;simple&quot;, mode:&quot;all&quot;)
 &lt;$vars 
   fulltext=&lt;&lt;__text__&gt;&gt;
@@ -10978,7 +11023,7 @@ src=&quot;&quot;&quot;&lt;&lt;.lorem np:2&gt;&gt;
 
 !! Macro
 &lt;&lt;&lt;
-&lt;&lt;show-macro-content&gt;&gt;
+&lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;
 
 !! Summary
@@ -10996,17 +11041,12 @@ can be used if the call to `find` macro wrapped in a `div` with suitable type e.
 : Date: Dec 28, 2018
 : First release</pre>
 </div>
-<div author="Mohammad" created="20190317172537962" creator="Mohammad" description="github-link creates a link using Tiddlywiki big button to a github page" modified="20190321192023757" modifier="Mohammad" syntax="&lt;&lt;github-link label:&quot;GitHub&quot; url:&quot;&quot; background:&quot;#444&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/github-link">
+<div author="Mohammad" created="20190317172537962" creator="Mohammad" description="github-link creates a link using Tiddlywiki big button to a github page" modified="20190322221725802" modifier="Mohammad" syntax="&lt;&lt;github-link label:&quot;GitHub&quot; url:&quot;&quot; background:&quot;#444&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/github-link">
 <pre>\define github-link(url:&quot;&quot;, label:&quot;GitHub&quot;, background:&quot;#444&quot; )
 &lt;a href=&lt;&lt;__url__&gt;&gt; class=&quot;tc-btn-big-green&quot;
 style=&quot;background-color:$background$;&quot; target=&quot;_blank&quot;&gt;
 {{$:/core/images/github}} &lt;$text text=&lt;&lt;__label__&gt;&gt; /&gt; &lt;/a&gt;
 \end
-
-!! Macro
-&lt;&lt;&lt;
-&lt;&lt;show-macro&gt;&gt;
-&lt;&lt;&lt;
 
 !! Purpose
 &lt;&lt;&lt;
@@ -11019,14 +11059,33 @@ creates a link using Tiddlywiki big button to a github page (repository)
 &lt;&lt;github-link label:&quot;GitHub&quot; url:&quot;&quot; background:&quot;#444&quot;&gt;&gt;
 ```
 
-!! Content and attributes
-|!Attributes |!Type |!Description |
+!! Content and parameters
+|Parameter |Type |Description |h
 |url |required|the url address to github repository|
 |label |optional|the button label |
 |background |optional|the button background color, any valid CSS color|
 &lt;&lt;&lt;
 
-!! Example
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
+&lt;&lt;&lt;
+&lt;&lt;show-macro&gt;&gt;
+&lt;&lt;&lt;
+
+!! Revisions
+&lt;&lt;&lt;
+;Rev 0.1
+:2019-03-17, basic version
+&lt;&lt;&lt;
+
+!! Reference
+&lt;&lt;&lt;
+# [ext[Yazd|https://tw-scripts.github.io/Yazd/]]
+# [[HelloThere|https://tiddlywiki.com/prerelease/#HelloThere]]
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+
+!! Examples
 &lt;&lt;&lt;
 description
 &lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
@@ -11034,29 +11093,15 @@ src=&quot;&quot;&quot;&lt;&lt;github-link label:&quot;tw5-checklist on GitHub&qu
   &gt;&gt;
 &quot;&quot;&quot;/&gt;
 &lt;&lt;&lt;
-
-!! Revisions
-&lt;&lt;&lt;
-;Rev 0.1
-:basic version
-&lt;&lt;&lt;
-
-!! Reference
-# [[HelloThere|https://tiddlywiki.com/prerelease/#HelloThere]]
 </pre>
 </div>
-<div author="Mohammad" created="20190316213704281" creator="Mohammad" description="creates horizontal space using an empty span" modified="20190321192125982" modifier="Mohammad" syntax="&lt;&lt;hspace width:&quot;5px&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/hspace">
+<div author="Mohammad" created="20190316213704281" creator="Mohammad" description="creates horizontal space using an empty span" modified="20190322221738971" modifier="Mohammad" syntax="&lt;&lt;hspace width:&quot;5px&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/hspace">
 <pre>\define hspace(width:&quot;5px&quot;)
 &lt;span style=&quot;margin-left: $width$;&quot;&gt;&lt;/span&gt;
 \end
 
-!! Macro
-&lt;&lt;&lt;
-&lt;&lt;show-macro&gt;&gt;
-&lt;&lt;&lt;
-
 !! Purpose
-&gt; creates horizontal space using an empty span
+&gt; ''hspace'' creates horizontal space using an empty span
 
 !! Syntax
 &lt;&lt;&lt;
@@ -11064,46 +11109,50 @@ src=&quot;&quot;&quot;&lt;&lt;github-link label:&quot;tw5-checklist on GitHub&qu
 &lt;&lt;hspace width:&quot;5px&quot;&gt;&gt;
 ```
 
-!! Content and attributes
-|!Attributes |!Type |!Description |
+!! Content and parameters
+|Parameter |Type |Description |h
 |width |optional|the width of horizontal space, default is 5px |
 
-`width`, specifies a fixed left margin in px, cm, mm, em, ch, etc.
+//width//, specifies a fixed left margin in px, cm, mm, em, ch, etc.
 &lt;&lt;&lt;
 
-!! Example
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
 &lt;&lt;&lt;
-Here a horizontal space with 10 pixels is created
-&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
-src=&quot;&quot;&quot;&gt; This is &lt;&lt;hspace 10px&gt;&gt; some spaces!
-&quot;&quot;&quot;/&gt;
+&lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;
 
 !! Revisions
 &lt;&lt;&lt;
 ;Rev 0.1
-:17th Mar 2019 00:46:47
+:2019-03-23, basic version
 &lt;&lt;&lt;
 
 !! References
+&lt;&lt;&lt;
+# [ext[Yazd|https://tw-scripts.github.io/Yazd/]]
 # [[CSS values and units|https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units]]
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+!! Example
+&lt;&lt;&lt;
+Here a horizontal space with 25 pixels is created
+&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
+src=&quot;&quot;&quot;This is &lt;&lt;hspace 25px&gt;&gt; some spaces!
+&quot;&quot;&quot;/&gt;
+&lt;&lt;&lt;
 </pre>
 </div>
-<div author="Mohammad" created="20190316221956925" creator="Mohammad" description="creates a link to a tiddler" modified="20190321192303388" modifier="Mohammad" syntax="&lt;&lt;linkto tiddler&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/linkto">
+<div author="Mohammad" created="20190316221956925" creator="Mohammad" description="creates a link to a tiddler" modified="20190322212554650" modifier="Mohammad" syntax="&lt;&lt;linkto tiddler&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/linkto">
 <pre>\define linkto( tiddler:&quot;&quot; )
 &lt;$link to=&lt;&lt;__tiddler__&gt;&gt;&gt;&lt;$text text=&lt;&lt;__tiddler__&gt;&gt; /&gt;&lt;/$link&gt;
 \end
-
-!! Macro
-&lt;&lt;&lt;
-&lt;&lt;show-macro&gt;&gt;
-&lt;&lt;&lt;
 
 !! Purpose
 &lt;&lt;&lt;
 creates a link to a tiddler. This macro is used when in a script it is desired to make link to a tiddler. 
 
-`linkto` uses `$text` widget to prevent auto link from wikitext with camel case.
+''linkto'' uses `$text` widget to prevent auto link from wikitext with camel case.
 &lt;&lt;&lt;
 
 !! Syntax
@@ -11112,12 +11161,29 @@ creates a link to a tiddler. This macro is used when in a script it is desired t
 &lt;&lt;linkto tiddler&gt;&gt;
 ```
 
-!! Content and attributes
-|!Attributes |!Type |!Description |
+!! Content and parameters
+|Parameter |Type |Description |h
 |tiddler |required|the title of tiddler to it link created|
 &lt;&lt;&lt;
 
-!! Example
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
+&lt;&lt;&lt;
+&lt;&lt;show-macro&gt;&gt;
+&lt;&lt;&lt;
+
+!! Revisions
+&lt;&lt;&lt;
+;Rev 0.1
+:2019-03-17, basic version
+&lt;&lt;&lt;
+
+!! Reference
+&lt;&lt;&lt;
+# [ext[Yazd|https://tw-scripts.github.io/Yazd/]]
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+!! Examples
 &lt;&lt;&lt;
 This is a linkto home
 &lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
@@ -11126,15 +11192,29 @@ src=&quot;&quot;&quot;&lt;$list filter=&quot;[tag[yazd]!is[system]limit[3]]&quot
 &lt;/$list&gt;
 &quot;&quot;&quot;/&gt;
 &lt;&lt;&lt;
-
-!! Revisions
-&lt;&lt;&lt;
-;Rev 0.1
-17th Mar 2019 01:53:07
-&lt;&lt;&lt;
 </pre>
 </div>
-<div author="Mohammad" created="20190321164239382" creator="Mohammad" description="add desc..." modified="20190321192230662" modifier="Mohammad" syntax="&lt;&lt;olist filter prefix:&quot;&quot; class:&quot;&quot; type:&quot;ol&quot; emptyMessage:&quot;No tiddler found&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/olist">
+<div created="20190322221124412" creator="Mohammad" modified="20190322221322348" modifier="Mohammad" tags="$:/tags/Macro" title="macro/list-authors">
+<pre>\define list-authors()
+&lt;$wikify name=&quot;authors&quot; text=&quot;&quot;&quot;
+&lt;$list filter=&quot;[tag[$:/tags/Macro]tag[yazd]has[author]get[author]]&quot;&gt;
+&lt;&lt;handle-title-with-space&gt;&gt;
+&lt;/$list&gt;&quot;&quot;&quot;&gt;
+&lt;ul&gt;
+&lt;$list filter=&quot;[enlist&lt;authors&gt;sort[title]]&quot;&gt;
+&lt;li&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt; /&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/$wikify&gt;
+\end
+
+\define handle-title-with-space()
+[[[[$(currentTiddler)$]]]]
+\end
+
+&lt;&lt;show-macro&gt;&gt;</pre>
+</div>
+<div author="Mohammad" created="20190321164239382" creator="Mohammad" description="returns a formatted list of selected tiddlers and displays modified titles by removing prefixes" modified="20190322222611983" modifier="Mohammad" syntax="&lt;&lt;olist filter prefix:&quot;&quot; class:&quot;&quot; type:&quot;ol&quot; emptyMessage:&quot;No tiddler found&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/olist">
 <pre>\define olist(filter,prefix:&quot;&quot;,class:&quot;&quot;,type:&quot;ol&quot;,emptyMessage:&quot;No tiddler found&quot;)
   &lt;$type$ class=&quot;$class$&quot; style=&quot;padding-bottom:10px;padding-top:10px;&quot;&gt;
     &lt;$list filter=&lt;&lt;__filter__&gt;&gt; emptyMessage=&lt;&lt;__emptyMessage__&gt;&gt;&gt;
@@ -11150,14 +11230,9 @@ src=&quot;&quot;&quot;&lt;$list filter=&quot;[tag[yazd]!is[system]limit[3]]&quot
 \end
 
 
-!! Macro
-&lt;&lt;&lt;
-&lt;&lt;show-macro&gt;&gt;
-&lt;&lt;&lt;
-
 !! Purpose
 &lt;&lt;&lt;
-The `olist` returns a formatted list of selected tiddlers and displays modified titles by removing prefixes.
+The ''olist'' returns a formatted list of selected tiddlers and displays modified titles by removing prefixes.
 &lt;&lt;&lt;
 
 !! Syntax
@@ -11166,32 +11241,41 @@ The `olist` returns a formatted list of selected tiddlers and displays modified 
 &lt;&lt;olist filter prefix:&quot;&quot; class:&quot;&quot; type:&quot;ol&quot; emptyMessage:&quot;No tiddler found&quot;&gt;&gt;
 ```
 
-!! Content and attributes
-|!Attributes |!Type |!Description |
+!! Content and parameters
+|Parameter |Type |Description |h
 |filter |required|any Tiddlywiki filter expression |
 |prefix |optional|the prefix to remove from displaying title|
 |class |optional|a user defined class for typed list (`ol` or `ul`)|
 |type |optional|the type of list (`ol` or `ul`), default is `ol`.|
 |emptyMessage |optional|a message to be displayed when the filter returns no title|
-
-
 &lt;&lt;&lt;
 
-!! Example
+
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
+&lt;&lt;&lt;
+&lt;&lt;show-macro&gt;&gt;
+&lt;&lt;&lt;
+
+!! Revisions
+&lt;&lt;&lt;
+;Rev 0.1
+:2019-03-21, basic version
+&lt;&lt;&lt;
+
+!! Reference
+&lt;&lt;&lt;
+# [ext[Yazd|https://tw-scripts.github.io/Yazd/]]
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+!! Examples
 &lt;&lt;&lt;
 The below example lists three tiddlers tagged with `yazd` and removes the `macro/` prefix. If the tiddler title has not `macro/` prefix, then the full title is displayed.
 
 &lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
 src=&quot;&quot;&quot;&lt;&lt;olist filter:&quot;[tag[yazd]limit[3]]&quot; prefix:&quot;macro/&quot; class:&quot;alert-primary&quot;&gt;&gt;
 &quot;&quot;&quot;/&gt;
-
-&lt;&lt;&lt;
-
-!! Revisions
-&lt;&lt;&lt;
-;Rev 0.1
-:Mar 21th, 2019, basic version
-&lt;&lt;&lt;</pre>
+</pre>
 </div>
 <div created="20190317174614898" creator="Mohammad" modified="20190321105847941" modifier="Mohammad" tags="$:/tags/Macro" title="macro/show-macro">
 <pre>\define disp-macro-contents(p)
@@ -11220,15 +11304,77 @@ src=&quot;&quot;&quot;&lt;&lt;olist filter:&quot;[tag[yazd]limit[3]]&quot; prefi
 &lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div author="Mohammad" created="20190316210445463" creator="Mohammad" description="creates a vertical space using an empty paragraph" modified="20190321192207957" modifier="Mohammad" syntax="&lt;&lt;vspace height:&quot;2cm&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/vspace">
-<pre>\define vspace(height:&quot;2cm&quot;)
-&lt;p style=&quot;margin-bottom: $height$;&quot;&gt;&lt;/p&gt;
+<div author="Rob Holez (modified by Mohammad)" created="20190322161929431" creator="Mohammad" description="Slider macro shows (hides) its content." modified="20190322213927728" modifier="Mohammad" syntax="&lt;&lt;slider-macro label:&quot;&quot; text:&quot;&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/slider-macro" url="https://hoelz.ro/files/fts.html#Query%20Examples">
+<pre>\define slider-macro(label, text)
+&lt;$set name=&quot;revealState&quot; value=&lt;&lt;qualify &quot;$:/state/slider-macro/$(currentTiddler)$/$label$&quot;&gt;&gt;&gt;
+&lt;h2&gt;
+  &lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;revealState&gt;&gt; text=&quot;yes&quot;&gt;
+    &lt;$button class=&quot;tc-btn-invisible tc-tiddlylink&quot; set=&lt;&lt;revealState&gt;&gt; setTo=&quot;yes&quot;&gt;
+      {{$:/core/images/right-arrow}}
+    &lt;/$button&gt;
+  &lt;/$reveal&gt;
+  &lt;$reveal type=&quot;match&quot; state=&lt;&lt;revealState&gt;&gt; text=&quot;yes&quot;&gt;
+    &lt;$button class=&quot;tc-btn-invisible tc-tiddlylink&quot; set=&lt;&lt;revealState&gt;&gt; setTo=&quot;no&quot;&gt;
+      {{$:/core/images/down-arrow}}
+    &lt;/$button&gt;
+  &lt;/$reveal&gt; 
+  $label$
+&lt;/h2&gt;
+
+&lt;$reveal type=&quot;match&quot; state=&lt;&lt;revealState&gt;&gt; text=&quot;yes&quot;&gt;
+$text$
+&lt;/$reveal&gt;
+&lt;/$set&gt;
 \end
 
-!! Macro
+!! Purpose
+&lt;&lt;&lt;
+''Slider'' macro shows (hides) its content. The content is passed using the //text// parameter.
+&lt;&lt;&lt;
+
+!! Syntax
+&lt;&lt;&lt;
+```
+&lt;&lt;slider-macro label:&quot;&quot; text:&quot;&quot;&gt;&gt;
+```
+
+!! Content and parameters
+|Parameter |Type |Description |h
+|label |required|a label to be shown for slider |
+|text |required|the slider content|
+&lt;&lt;&lt;
+
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
 &lt;&lt;&lt;
 &lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;
+
+!! Revisions
+&lt;&lt;&lt;
+;Rev 0.1
+:2019-03-23, initial release
+&lt;&lt;&lt;
+
+!! Reference
+&lt;&lt;&lt;
+# [ext[Yazd|https://tw-scripts.github.io/Yazd/]]
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+!! Example
+&lt;&lt;&lt;
+description
+&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
+src=&quot;&quot;&quot;&lt;&lt;slider-macro label:&quot;My Label&quot;  text:&quot;This is a simple test!&quot;&gt;&gt;
+  &gt;&gt;
+&quot;&quot;&quot;/&gt;
+&lt;&lt;&lt;
+</pre>
+</div>
+<div author="Mohammad" created="20190316210445463" creator="Mohammad" description="creates a vertical space using an empty paragraph" modified="20190322221824729" modifier="Mohammad" syntax="&lt;&lt;vspace height:&quot;2cm&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/vspace">
+<pre>\define vspace(height:&quot;2cm&quot;)
+&lt;p style=&quot;margin-bottom: $height$;&quot;&gt;&lt;/p&gt;
+\end
 
 !! Purpose
 &gt; creates a vertical space using an empty paragraph
@@ -11239,19 +11385,16 @@ src=&quot;&quot;&quot;&lt;&lt;olist filter:&quot;[tag[yazd]limit[3]]&quot; prefi
 &lt;&lt;vspace height:&quot;2cm&quot;&gt;&gt;
 ```
 
-!! Content and attributes
-|!Attributes |!Type |!Description |
+!! Content and parameters
+|Parameters |Type |Description |h
 |height |optional|the height of vertical space, default is 2cm |
 
 `height`, specifies a fixed bottom margin in px, cm, em, etc. Default value is 2cm.
 &lt;&lt;&lt;
 
-!! Example
+&lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
 &lt;&lt;&lt;
-This example creates a vertical space with 2cm height
-&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
-src=&quot;&quot;&quot;&gt;This is 2cm &lt;&lt;vspace 2cm&gt;&gt; some spaces!
-&quot;&quot;&quot;/&gt;
+&lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;
 
 !! Revisions
@@ -11261,7 +11404,20 @@ src=&quot;&quot;&quot;&gt;This is 2cm &lt;&lt;vspace 2cm&gt;&gt; some spaces!
 &lt;&lt;&lt;
 
 !! References
+&lt;&lt;&lt;
 # [[CSS values and units|https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units]]
+&lt;&lt;&lt;
+&quot;&quot;&quot;/&gt;
+
+!! Example
+&lt;&lt;&lt;
+This example creates a vertical space with 2cm height
+&lt;$macrocall $name=&quot;wikitext-example-without-html&quot; 
+src=&quot;&quot;&quot;&gt;This is 2cm &lt;&lt;vspace 2cm&gt;&gt; some spaces!
+&quot;&quot;&quot;/&gt;
+&lt;&lt;&lt;
+
+
 </pre>
 </div>
 <div created="20180823200810883" creator="Mohammad" modified="20180830145820718" modifier="Mohammad" tags="kookma" title="Mohammad" type="application/x-tiddler">
@@ -11284,8 +11440,143 @@ src=&quot;&quot;&quot;
 src:&quot;&quot;&quot;
 &quot;&quot;&quot;&gt;&gt;</pre>
 </div>
-<div created="20190316195037973" creator="Mohammad" list="Home [[Coding Practice]] [[List of Macros]] Contributors" modified="20190316195037973" modifier="Mohammad" title="start">
-<pre></pre>
+<div created="20180615032251583" creator="Mohammad" modified="20190311192513398" modifier="Mohammad" tags="$:/tags/SideBar" title="ToDos">
+<pre>&lt;div style=&quot;float:right;&quot;&gt;&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&lt;&lt;now format:&quot;DDth MMM YYYY&quot;&gt;&gt; tags=&quot;task&quot; text=&quot;&quot;/&gt;
+&lt;span style=&quot;color:blue;&quot;&gt;''New Task''&lt;/span&gt;
+&lt;/$button&gt;&lt;/div&gt;
+
+! Outstanding tasks
+//Drag the tasks to re-order them//
+
+&lt;&lt;list-tagged-draggable tag:&quot;task&quot; subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;$:/plugins/.mr/shiraz/template/task-management-draggable&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
+
+! Completed tasks
+
+//(Listed in reverse order of completion)//
+
+&lt;$list filter=&quot;[!has[draft.of]tag[task]tag[done]!sort[created]] -[[ToDos]]&quot;&gt;
+&lt;$checkbox tag=&quot;done&quot;&gt;
+&lt;span style=&quot;color:green&quot;&gt;{{!!title}}&lt;$link to={{!!title}}&gt;&lt;/$link&gt;&lt;/span&gt;
+&lt;div style=&quot;background-color:#ffffcc44&quot;&gt;
+&lt;$transclude tiddler=&lt;&lt;currentTiddler&gt;&gt; filed=&quot;text&quot; mode=&quot;block&quot;/&gt;
+&lt;/div&gt;
+&lt;/$checkbox&gt;
+&lt;/$list&gt;
+</pre>
+</div>
+<div created="20180419120729037" creator="Mohammad" modified="20190224181549244" modifier="Mohammad" tags="$:/tags/Stylesheet theme" title="TWDark" type="text/css">
+<pre>/* The customised dark style for TiddlyFor syntax highlighthing
+(highlight.js style)
+Apr 19, 2018
+Mohammad Rahmani
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #2e2e2e;
+  color: #ffffff;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #C0DD0C;
+  font-style:normal;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-type,
+.hljs-addition {
+  color: #FF8000;
+  font-weight:normal;
+}
+
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #f99157;
+}
+
+.hljs-number{
+ color: #7FB347;
+}
+
+
+.hljs-string,
+.hljs-doctag,
+.hljs-regexp {
+  color:#FFC600; /* #8abeb7;*/
+}
+
+.hljs-title,
+.hljs-name,
+.hljs-section {
+  color: #b5bd68;
+}
+
+.hljs-built_in {
+  color: #66D9EF;
+  font-weight:normal;
+}
+
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-id,
+.hljs-class .hljs-title {
+   color: #ffcc66;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-link {
+  color: #f99157;
+}
+
+.hljs-deletion {
+  color: #dc322f;
+}
+
+.hljs-formula {
+  background: #eee8d5;
+}
+
+.hljs-attr,
+.hljs-attribute {
+  color: #81a2be;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+/*correctio of tex tags*/
+.hljs-tag,
+.hljs-section {
+  color: #ff0000;
+}</pre>
+</div>
+<div created="20190322201520975" creator="Mohammad" modified="20190322210007209" modifier="Mohammad" tags="yazd" title="Yazd">
+<pre>[img class=&quot;float-right&quot; [https://whc.unesco.org/uploads/thumbs/site_1544_0002-500-375-20170608103145.jpg]]
+
+!! Historic City of Yazd
+&lt;&lt;&lt; 
+The City of Yazd is located in the middle of the Iranian plateau, 270 km southeast of Isfahan, close to the Spice and Silk Roads. It bears living testimony to the use of limited resources for survival in the desert. Water is supplied to the city through a qanat system developed to draw underground water. The earthen architecture of Yazd has escaped the modernization that destroyed many traditional earthen towns, retaining its traditional districts, the qanat system, traditional houses, bazars, hammams, mosques, synagogues, Zoroastrian temples and the historic garden of Dolat-abad.
+&lt;&lt;&lt;[[UNESCO World Heritage Centre|https://whc.unesco.org/en/list/1544]]
+
+!!! References
+# [[Encyclopædia Britannica|https://www.britannica.com/place/Yazd]]
+# [[Photo Gallaery at Alamy|https://www.alamy.com/stock-photo/windcatcher.html]]</pre>
 </div>
 <div created="20190317183045219" creator="Mohammad" modified="20190321162337179" modifier="Mohammad" tags="" title="Yazd Mechanism">
 <pre>;How Yazd works?
