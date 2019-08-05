@@ -323,6 +323,12 @@ Error message and password prompt
 
 <li>demo/pull/exmp01</li>
 
+<li>demo/simple-navigation/Tid01</li>
+
+<li>demo/simple-navigation/Tid02</li>
+
+<li>demo/simple-navigation/Tid03</li>
+
 <li>demo/unique-title/exmp01</li>
 
 <li>demo/unique-title/exmp01/template</li>
@@ -375,9 +381,13 @@ Error message and password prompt
 
 <li>snippet/wikitext-macro</li>
 
+<li>stylesheet/simple-navigation</li>
+
 <li>ToDos</li>
 
 <li>TWDark</li>
+
+<li>viewtemplate/simple-navigation</li>
 
 <li>Yazd</li>
 
@@ -9520,7 +9530,12 @@ src=&quot;&quot;&quot;&lt;&lt;mac-name
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[macro/Utility]]</pre>
+# [[macro/simple-navigation]]
+# [[demo/simple-navigation/Tid01]]
+# [[demo/simple-navigation/Tid02]]
+# [[demo/simple-navigation/Tid03]]
+# [[viewtemplate/simple-navigation]]
+# [[stylesheet/simple-navigation]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10611,8 +10626,8 @@ exports.hljs = hljs;</pre>
 <div created="20190316152331950" creator="Mohammad" modified="20190322203854810" modifier="Mohammad" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div created="20190316152434353" creator="Mohammad" modified="20190805134728529" modifier="Mohammad" title="$:/state/tab/sidebar--595412856">
-<pre>List of Macros</pre>
+<div created="20190316152434353" creator="Mohammad" modified="20190805184640287" modifier="Mohammad" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20190322165018268" creator="Mohammad" modified="20190802095611630" modifier="Mohammad" title="$:/state/toggle-view-fields">
 <pre>hide</pre>
@@ -10620,7 +10635,7 @@ exports.hljs = hljs;</pre>
 <div created="20190316152341816" creator="M" modified="20190316152343264" modifier="Mohamma" title="$:/status/UserName">
 <pre>Mohammad</pre>
 </div>
-<div created="20190805141401696" creator="Mohammad" list="macro/simple-navigation" modified="20190805151404088" modifier="Mohammad" title="$:/StoryList">
+<div created="20190805184903662" creator="Mohammad" list="$:/Import Home [[Coding Practice]] [[Documentation Practice]] [[Macro Summary]] [[Change Log]]" modified="20190805184903662" modifier="Mohammad" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190322202854533" creator="Mohammad" modified="20190322213903996" modifier="Mohammad" title="$:/temp/advancedsearch">
@@ -10639,7 +10654,7 @@ exports.hljs = hljs;</pre>
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///G:/TW/TW-Yazd/tw-yazd.html&quot;
+            &quot;text&quot;: &quot;file:///C:/Temp/TW-Yazd/tw-yazd.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -10659,7 +10674,7 @@ exports.hljs = hljs;</pre>
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/G:/TW/TW-Yazd/tw-yazd.html&quot;
+            &quot;text&quot;: &quot;/C:/Temp/TW-Yazd/tw-yazd.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -10671,11 +10686,11 @@ exports.hljs = hljs;</pre>
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1280&quot;
+            &quot;text&quot;: &quot;1536&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1024&quot;
+            &quot;text&quot;: &quot;864&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -10928,6 +10943,18 @@ Will produce
 </div>
 <div created="20190802094025732" creator="Mohammad" list="1 2 3 4" modified="20190802095212107" modifier="Mohammad" title="demo/pull/exmp01">
 <pre>This is part of [[macro/pull]]. Do not delete!</pre>
+</div>
+<div created="20190805181306810" creator="Mohammad" modified="20190805182330205" modifier="Mohammad" tags="demo" title="demo/simple-navigation/Tid01">
+<pre>!! Note
+This is a demo tiddler and shows how `simple-navigation` macro works.</pre>
+</div>
+<div created="20190805181357672" creator="Mohammad" modified="20190805181412333" modifier="Mohammad" tags="demo" title="demo/simple-navigation/Tid02">
+<pre>!! Note ii
+This is another demo tiddler.</pre>
+</div>
+<div created="20190805181415079" creator="Mohammad" modified="20190805181427582" modifier="Mohammad" tags="demo" title="demo/simple-navigation/Tid03">
+<pre>!! Note iii
+This is the last demo tiddler.</pre>
 </div>
 <div created="20190328114826012" creator="Mohammad" modified="20190328120121279" modifier="Mohammad" tags="exmp01 yazd" title="demo/unique-title/exmp01">
 <pre>!! Use template and unique title
@@ -11717,7 +11744,7 @@ You can customize macro to have different butoon style or use svg icon for butto
 &lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div author="Mohammad" created="20190805134729789" creator="Mohammad" description="creates small navigation buttons at the bottom of all tiddlers belong to a specific tag" modified="20190805152148163" modifier="Mohammad" syntax="&lt;&lt;simple-navigation myTag&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/simple-navigation">
+<div author="Mohammad" created="20190805134729789" creator="Mohammad" description="creates small navigation buttons at the bottom of all tiddlers belong to a specific tag" modified="20190805181647733" modifier="Mohammad" syntax="&lt;&lt;simple-navigation myTag&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/simple-navigation">
 <pre>\define simple-navigation(myTag:&quot;demo&quot;, class)
 &lt;$list filter=&quot;[all[current]tag[$myTag$]]&quot;&gt;
 &lt;div class=&quot;$class$&quot;&gt;
@@ -11784,6 +11811,7 @@ To use the simple navigation for tiddlers tagged with `tutorial` in the above ti
 &lt;&lt;simpleNavigation myTag:&quot;tutorial&quot;&gt;&gt;
 ```
 
+See the [[demo/simple-navigation/Tid01]] as a working example.
 &lt;&lt;&lt;
 
 !! Sample class
@@ -12009,6 +12037,12 @@ src=&quot;&quot;&quot;
 src:&quot;&quot;&quot;
 &quot;&quot;&quot;&gt;&gt;</pre>
 </div>
+<div created="20190805181746967" creator="Mohammad" modified="20190805181812622" modifier="Mohammad" tags="$:/tags/Stylesheet" title="stylesheet/simple-navigation">
+<pre>.myClass{
+ font-weight: bold;
+ color:dodgerblue;
+}</pre>
+</div>
 <div created="20180615032251583" creator="Mohammad" modified="20190311192513398" modifier="Mohammad" tags="$:/tags/SideBar" title="ToDos">
 <pre>&lt;div style=&quot;float:right;&quot;&gt;&lt;$button&gt;
 &lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&lt;&lt;now format:&quot;DDth MMM YYYY&quot;&gt;&gt; tags=&quot;task&quot; text=&quot;&quot;/&gt;
@@ -12134,6 +12168,9 @@ Mohammad Rahmani
 .hljs-section {
   color: #ff0000;
 }</pre>
+</div>
+<div created="20190805181431085" creator="Mohammad" modified="20190805181837309" modifier="Mohammad" tags="$:/tags/ViewTemplate yazd" title="viewtemplate/simple-navigation">
+<pre>&lt;&lt;simple-navigation myTag:demo class:myClass&gt;&gt;</pre>
 </div>
 <div created="20190322201520975" creator="Mohammad" modified="20190322210007209" modifier="Mohammad" tags="yazd" title="Yazd">
 <pre>[img class=&quot;float-right&quot; [https://whc.unesco.org/uploads/thumbs/site_1544_0002-500-375-20170608103145.jpg]]
