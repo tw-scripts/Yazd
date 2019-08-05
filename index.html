@@ -10551,7 +10551,7 @@ exports.hljs = hljs;</pre>
 <div created="20190322195518976" creator="Mohammad" modified="20190802091244230" modifier="Mohammad" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20190322195514817" creator="Mohammad" modified="20190802093821900" modifier="Mohammad" title="$:/state/sidebar">
+<div created="20190322195514817" creator="Mohammad" modified="20190805151418187" modifier="Mohammad" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20190327202817820" creator="Mohammad" modified="20190327202820842" modifier="Mohammad" title="$:/state/slider-macro/Draft of 'macro/' by Mohammad/Code-967086383">
@@ -10581,7 +10581,7 @@ exports.hljs = hljs;</pre>
 <div created="20190802093831109" creator="Mohammad" modified="20190802094021109" modifier="Mohammad" title="$:/state/slider-macro/macro/pull/Code-194508443">
 <pre>no</pre>
 </div>
-<div created="20190805135357104" creator="Mohammad" modified="20190805135357104" modifier="Mohammad" title="$:/state/slider-macro/macro/simple-navigation/Code--652404725">
+<div created="20190805135357104" creator="Mohammad" modified="20190805151422155" modifier="Mohammad" title="$:/state/slider-macro/macro/simple-navigation/Code--652404725">
 <pre>yes</pre>
 </div>
 <div created="20190322213939164" creator="Mohammad" modified="20190322213939931" modifier="Mohammad" title="$:/state/slider-macro/macro/slider-macro/Code--49026255">
@@ -10620,7 +10620,7 @@ exports.hljs = hljs;</pre>
 <div created="20190316152341816" creator="M" modified="20190316152343264" modifier="Mohamma" title="$:/status/UserName">
 <pre>Mohammad</pre>
 </div>
-<div list="Home [[Coding Practice]] [[Documentation Practice]] [[Macro Summary]] [[Change Log]]" title="$:/StoryList">
+<div created="20190805141401696" creator="Mohammad" list="macro/simple-navigation" modified="20190805151404088" modifier="Mohammad" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190322202854533" creator="Mohammad" modified="20190322213903996" modifier="Mohammad" title="$:/temp/advancedsearch">
@@ -11717,10 +11717,10 @@ You can customize macro to have different butoon style or use svg icon for butto
 &lt;&lt;show-macro&gt;&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div author="Mohammad" created="20190805134729789" creator="Mohammad" description="creates small navigation buttons at the bottom of all tiddlers belong to a specific tag" modified="20190805140815062" modifier="Mohammad" syntax="&lt;&lt;simple-navigation myTag&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/simple-navigation">
-<pre>\define simple-navigation(myTag:&quot;demo&quot;)
+<div author="Mohammad" created="20190805134729789" creator="Mohammad" description="creates small navigation buttons at the bottom of all tiddlers belong to a specific tag" modified="20190805152148163" modifier="Mohammad" syntax="&lt;&lt;simple-navigation myTag&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/simple-navigation">
+<pre>\define simple-navigation(myTag:&quot;demo&quot;, class)
 &lt;$list filter=&quot;[all[current]tag[$myTag$]]&quot;&gt;
-&lt;div class=&quot;navx&quot;&gt;
+&lt;div class=&quot;$class$&quot;&gt;
 &lt;$list filter=&quot;[tag[$myTag$]before&lt;currentTiddler&gt;]&quot; variable=&quot;prevTiddler&quot;&gt;
 &lt;$button to=&lt;&lt;prevTiddler&gt;&gt; tooltip=&lt;&lt;prevTiddler&gt;&gt; class=&quot;tc-btn-invisible&quot;&gt;previous&lt;/$button&gt;
 &lt;/$list&gt;
@@ -11745,9 +11745,11 @@ The simple-navigation macro creates small navigation buttons at the bottom of al
 !! Content and parameters
 |Parameter |Type |Description |h
 |myTag |optional|the title of tag for which navigation buttons are created. Default value is `demo` |
+|class |optional|optinal css class to customize the format of `previous | next` buttons like color, font size and style, ...|
 
 ;Important
 : To use this macro, it should be placed in a tiddler tagged with `$:/tags/ViewTemplate` and it should be called inside the same tiddler.
+: The sequence (order) of tiddlers can be simply changed using the tag pill! So open one of the tiddler tagged with target tag and then click on the tag pill and re-order the tiddlers. More information on reordering tiddlers can be found at [[tag operator|https://tiddlywiki.com/#tag%20Operator]]
 &lt;&lt;&lt;
 
 &lt;$macrocall $name=slider-macro label=&quot;Code&quot; text=&quot;&quot;&quot;
@@ -11784,10 +11786,28 @@ To use the simple navigation for tiddlers tagged with `tutorial` in the above ti
 
 &lt;&lt;&lt;
 
+!! Sample class
+&lt;&lt;&lt;
+To customize the format of buttons, one can send a CSS class. For example the below class changes the font style to bold and the color to dodger blue. 
+
+```
+.myClass{
+ font-weight: bold;
+ color:dodgerblue;
+}
+```
+To use the above class put it in a tiddler tagged with `$:/tags/Stylesheet` and call the macro as below
+
+```
+&lt;&lt;simpleNavigation myTag:&quot;tutorial&quot; class:&quot;myClass&quot;&gt;&gt;
+```
+
+&lt;&lt;&lt;
+
 !! Remarks
 * It is possible to put the `simple-navigation` in a tiddler tag with `$:/tags/Macro` and call it from another tiddler tagged with `$:/tags/ViewTemplate`
-* It is important to note the tiddler from which macro is called shall have the `$:/tags/ViewTemplate` tag, if not, if not the buttons will not appear.
-* Dont tag a tiddler with more than one tags which have simple navigation
+* It is important to note the tiddler from which macro is called shall have the `$:/tags/ViewTemplate` tag, if not, the buttons wont appear.
+* Dont tag a tiddler with more than one of those tags which have simple navigation
 </pre>
 </div>
 <div author="Rob Holez (modified by Mohammad)" created="20190322161929431" creator="Mohammad" description="Slider macro shows (hides) its content." modified="20190328121420659" modifier="Mohammad" syntax="&lt;&lt;slider-macro label:&quot;&quot; text:&quot;&quot;&gt;&gt;" tags="yazd $:/tags/Macro" title="macro/slider-macro" url="https://hoelz.ro/files/fts.html#Query%20Examples">
